@@ -6,18 +6,19 @@
 /*   By: phperrot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/04 18:06:03 by phperrot          #+#    #+#             */
-/*   Updated: 2018/07/04 19:32:09 by phperrot         ###   ########.fr       */
+/*   Updated: 2018/07/05 02:15:59 by phperrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int ft_putchar(char c);
-void    ft_is_negative(int n);
+int		ft_putchar(char c);
+void	ft_is_negative(int n);
 
 int		main(void)
 {
 	int n;
+
 	n = 3;
 	ft_is_negative(n);
 	return (0);

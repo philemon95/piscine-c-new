@@ -6,7 +6,7 @@
 /*   By: phperrot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/04 09:00:34 by phperrot          #+#    #+#             */
-/*   Updated: 2018/07/04 18:43:16 by phperrot         ###   ########.fr       */
+/*   Updated: 2018/07/05 02:13:15 by phperrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	ft_print_numbers(void)
 
 	c = '0';
 	i = 0;
-		while (i < 10)
+	while (i < 10)
 	{
 		ft_putchar(c);
 		i = i + 1;

@@ -1,23 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: phperrot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/04 18:06:03 by phperrot          #+#    #+#             */
-/*   Updated: 2018/07/05 03:44:28 by phperrot         ###   ########.fr       */
+/*   Created: 2018/07/05 15:15:59 by phperrot          #+#    #+#             */
+/*   Updated: 2018/07/05 15:23:35 by phperrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int		ft_putchar(char c);
-void	display(char i, char j, char k);
-void	ft_print_comb(void);
+int     ft_putchar(char c);
 
-int		main(void)
-{
-	ft_print_comb();
-	return (0);
-}
+void    ft_putnbr(int nb)
+	{
+		unsigned int    n;
+
+	   	if (nb < 0)
+		{	
+		ft_putchar('-');
+		n = nb - 1;
+		}
+		else
+		{
+		n = nb;
+		}	
+
+	    if ( n >= 10)
+	    {
+		ft_putchar('0' + n / 10);
+		ft_putchar ('0' + n % 10);
+		}
+		else
+		{
+			ft_putchar ('0' +  n);
+		}
+	}
