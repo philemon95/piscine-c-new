@@ -6,7 +6,7 @@
 /*   By: phperrot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/05 15:15:59 by phperrot          #+#    #+#             */
-/*   Updated: 2018/07/06 10:31:56 by phperrot         ###   ########.fr       */
+/*   Updated: 2018/07/07 16:29:43 by phperrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,32 +30,27 @@ unsigned int	exceptions(int nb)
 	return (n);
 }
 
-int	ft_puttens(int n)
+int	ft_puttens(unsigned int n)
 {
 	int j;
 	int p;
-
-	if (n >= 10)
+	j = 0;
+	p = 1;
+	if (n > 9)
 	{
-		p = 1;
-		while (n / p >= 10)
+		while (n / p > 10)	
 		{
 			p = p * 10;
 		}
-		ft_putchar('0' + n / p);
-		n = (n % p);
-		if (n <= 9)
-		{
-			j = 1;
-			while (j <= p)
-			{
-				ft_putchar('0');
-				j = j * 100;
-			}
-		}
+		ft_putchar(n / p);
+		n = n % p;
 		ft_puttens(n);
 	}
+	else
+	{
 	return (n);
+	}
+
 }
 
 void	ft_putnbr(int nb)

@@ -6,18 +6,17 @@
 /*   By: phperrot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/06 16:35:52 by phperrot          #+#    #+#             */
-/*   Updated: 2018/07/06 16:56:17 by phperrot         ###   ########.fr       */
+/*   Updated: 2018/07/07 14:10:35 by phperrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int resultat = 1; 
+int g_resultat = 1;
 
-int ft_recursive_factorial(int nb)
+int		ft_recursive_factorial(int nb)
 {
-if (nb > 1)
+	if (nb > 1)
 	{
-	resultat = nb * ft_recursive_factorial(nb - 1);
+		g_resultat = nb * ft_recursive_factorial(nb - 1);
 	}
-return (resultat);
+	return (g_resultat);
 }
-

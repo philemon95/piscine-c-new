@@ -1,19 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_fibonacci.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: phperrot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/06 16:15:08 by phperrot          #+#    #+#             */
-/*   Updated: 2018/07/07 14:14:34 by phperrot         ###   ########.fr       */
+/*   Created: 2018/07/07 14:43:03 by phperrot          #+#    #+#             */
+/*   Updated: 2018/07/07 15:06:09 by phperrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_iterative_factorial(int nb);
-
-int		main(void)
-{
-	ft_iterative_factorial(800);
-	return (0);
+int		ft_fibonacci(int index)
+{	
+	if (index < 0)
+	{
+		return (-1);
+	}
+	else
+	{
+		if (index == 0 | index == 1 )
+		{
+			return(index);
+		}
+		else
+		{
+			return (ft_fibonacci(index - 1) + ft_fibonacci(index -2));
+		}
+	}
+	
 }

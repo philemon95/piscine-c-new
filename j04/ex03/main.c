@@ -6,14 +6,15 @@
 /*   By: phperrot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/06 16:15:08 by phperrot          #+#    #+#             */
-/*   Updated: 2018/07/07 14:14:34 by phperrot         ###   ########.fr       */
+/*   Updated: 2018/07/07 14:41:20 by phperrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include <stdio.h>
 
-int		ft_iterative_factorial(int nb);
+int		ft_recursive_power(int nb, int power);
 
 int		main(void)
 {
-	ft_iterative_factorial(800);
+	printf("%d",ft_recursive_power(8,5));
 	return (0);
 }

@@ -5,15 +5,18 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: phperrot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/06 16:15:08 by phperrot          #+#    #+#             */
-/*   Updated: 2018/07/07 14:14:34 by phperrot         ###   ########.fr       */
+/*   Created: 2018/07/07 14:56:31 by phperrot          #+#    #+#             */
+/*   Updated: 2018/07/07 15:06:14 by phperrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_iterative_factorial(int nb);
+#include <stdio.h>
 
-int		main(void)
+int     ft_fibonacci(int index);
+
+int 	main(void)
 {
-	ft_iterative_factorial(800);
+	printf("%d",ft_fibonacci(6));
 	return (0);
 }
+

@@ -1,19 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_sqrt.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: phperrot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/06 16:15:08 by phperrot          #+#    #+#             */
-/*   Updated: 2018/07/07 14:14:34 by phperrot         ###   ########.fr       */
+/*   Created: 2018/07/07 16:49:34 by phperrot          #+#    #+#             */
+/*   Updated: 2018/07/07 17:13:05 by phperrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_iterative_factorial(int nb);
-
-int		main(void)
+int		ft_sqrt(int nb)
 {
-	ft_iterative_factorial(800);
-	return (0);
+	int racine;
+	int resultat;
+
+	racine = 0;
+	resultat = 0;
+	
+	while (racine <= (nb / 2) &&  resultat == 0)
+	{
+		if (racine * racine == nb)
+		{
+			resultat = 1;
+		}
+		racine = racine + 1;
+	}
+	if (resultat == 1)
+	{
+		return(racine - 1);
+	}
+	else 
+	{
+		return (0);
+	}
 }

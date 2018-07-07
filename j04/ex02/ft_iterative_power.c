@@ -1,19 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_iterative_power.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: phperrot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/06 16:15:08 by phperrot          #+#    #+#             */
-/*   Updated: 2018/07/07 14:14:34 by phperrot         ###   ########.fr       */
+/*   Created: 2018/07/07 14:15:19 by phperrot          #+#    #+#             */
+/*   Updated: 2018/07/07 14:26:41 by phperrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_iterative_factorial(int nb);
-
-int		main(void)
+int		ft_iterative_power(int nb, int power)
 {
-	ft_iterative_factorial(800);
-	return (0);
+	int resultat;
+	int	j;
+
+	j = 1;
+	if (power < 0)
+	{
+		return (0);
+	}
+	else
+	{
+		resultat = 1;
+		while (j <= power)
+		{
+			resultat = resultat * nb;
+			j++;
+		}
+		return (resultat);
+	}
 }
