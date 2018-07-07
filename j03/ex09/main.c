@@ -1,30 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_alphabet.c                                :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: phperrot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/04 09:00:34 by phperrot          #+#    #+#             */
-/*   Updated: 2018/07/06 14:50:49 by phperrot         ###   ########.fr       */
+/*   Created: 2018/07/04 18:06:03 by phperrot          #+#    #+#             */
+/*   Updated: 2018/07/06 15:38:36 by phperrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include <unistd.h>
 
-int		ft_putchar(char c);
+int ft_putchar(char c);
 
-void	ft_print_alphabet(void)
+void ft_sort_integer_table(int *table, int size);
+
+
+int		main(void)
 {
-	char c;
-	int i;
 
-	c = 'a';
-	i = 0;
-	while (i < 26)
-	{
-		ft_putchar(c);
-		i = i + 1;
-		c++;
-	}
+	int i;
+	i=0;
+	
+	int tab[8];
+	
+	tab[0]=9;
+	tab[1]=1;
+	tab[2]=5;
+	tab[3]=0;
+	tab[4]=4;
+	tab[5]=7;
+	tab[6]=2;
+	tab[7]=8;
+	ft_sort_integer_table(tab, 8);
+	return (0);
 }

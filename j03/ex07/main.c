@@ -1,30 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_alphabet.c                                :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: phperrot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/04 09:00:34 by phperrot          #+#    #+#             */
-/*   Updated: 2018/07/06 14:50:49 by phperrot         ###   ########.fr       */
+/*   Created: 2018/07/04 18:06:03 by phperrot          #+#    #+#             */
+/*   Updated: 2018/07/06 15:13:20 by phperrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int		ft_putchar(char c);
+void ft_putchar(char c);
 
-void	ft_print_alphabet(void)
+void ft_putstr(char *str);
+
+char *ft_strrev(char *str);
+
+int		main(void)
 {
-	char c;
-	int i;
-
-	c = 'a';
-	i = 0;
-	while (i < 26)
-	{
-		ft_putchar(c);
-		i = i + 1;
-		c++;
-	}
+	char str[]="salut";
+	ft_putstr(ft_strrev(str));
+	return (0);
 }

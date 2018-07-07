@@ -1,30 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_alphabet.c                                :+:      :+:    :+:   */
+/*   atoi.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: phperrot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/04 09:00:34 by phperrot          #+#    #+#             */
-/*   Updated: 2018/07/06 14:50:49 by phperrot         ###   ########.fr       */
+/*   Created: 2018/07/07 11:02:49 by phperrot          #+#    #+#             */
+/*   Updated: 2018/07/07 12:17:38 by phperrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdlib.h>
+#include <stdio.h>
+int j=0;
 
-int		ft_putchar(char c);
-
-void	ft_print_alphabet(void)
-{
-	char c;
-	int i;
-
-	c = 'a';
-	i = 0;
-	while (i < 26)
+while (j<7)
 	{
-		ft_putchar(c);
-		i = i + 1;
-		c++;
+	tens = tens * 10;
+	j++;
 	}
+	}
+
+int	main(void)
+{
+	printf("%d", atoi("			\n\t	54\n3 21"));
 }

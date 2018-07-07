@@ -1,30 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_alphabet.c                                :+:      :+:    :+:   */
+/*   ft_iterative_factorial.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: phperrot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/04 09:00:34 by phperrot          #+#    #+#             */
-/*   Updated: 2018/07/06 14:50:49 by phperrot         ###   ########.fr       */
+/*   Created: 2018/07/06 16:04:31 by phperrot          #+#    #+#             */
+/*   Updated: 2018/07/06 16:34:05 by phperrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <unistd.h>
-
-int		ft_putchar(char c);
-
-void	ft_print_alphabet(void)
+#include <time.h>
+#include <stdio.h>
+int		ft_iterative_factorial(int nb)
 {
-	char c;
 	int i;
+	int resultat;
+	clock_t t1;
+	clock_t t2;
+	t1 = clock();
 
-	c = 'a';
-	i = 0;
-	while (i < 26)
+	i=1;
+	resultat=1;
+	while (i <= nb && t2-t1 < 2)
 	{
-		ft_putchar(c);
-		i = i + 1;
-		c++;
+	resultat = resultat * i;	
+	i++;
+	t2 =clock();
 	}
+	return (resultat);
 }
+
+

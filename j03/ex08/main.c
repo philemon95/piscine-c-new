@@ -1,30 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_alphabet.c                                :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: phperrot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/04 09:00:34 by phperrot          #+#    #+#             */
-/*   Updated: 2018/07/06 14:50:49 by phperrot         ###   ########.fr       */
+/*   Created: 2018/07/04 18:06:03 by phperrot          #+#    #+#             */
+/*   Updated: 2018/07/07 12:17:41 by phperrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <unistd.h>
-
-int		ft_putchar(char c);
-
-void	ft_print_alphabet(void)
+#include <stdio.h>
+int ft_atoi(char *str);
+int		main(void)
 {
-	char c;
-	int i;
+	
+	int tens = 1;
+	int j=0;
 
-	c = 'a';
-	i = 0;
-	while (i < 26)
+	while (j < 7)
 	{
-		ft_putchar(c);
-		i = i + 1;
-		c++;
+	tens = tens * 10;
+	j++;
 	}
+
+
+	char str[]="	-	054 5644";
+
+	printf("%d \n \n", ft_atoi(str));
+	printf("%d", tens);
+	return (0);
 }

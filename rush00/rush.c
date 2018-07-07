@@ -1,30 +1,55 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_alphabet.c                                :+:      :+:    :+:   */
+/*   rush.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: phperrot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/04 09:00:34 by phperrot          #+#    #+#             */
-/*   Updated: 2018/07/06 14:50:49 by phperrot         ###   ########.fr       */
+/*   Created: 2018/07/07 12:32:43 by phperrot          #+#    #+#             */
+/*   Updated: 2018/07/07 12:47:33 by phperrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int		ft_putchar(char c);
+int ft_putchar(char c);
 
-void	ft_print_alphabet(void)
+void 	rush(int y, int x)
 {
-	char c;
-	int i;
+	int i=1;
+	int j;
 
-	c = 'a';
-	i = 0;
-	while (i < 26)
+	while (i<=x)
 	{
-		ft_putchar(c);
-		i = i + 1;
-		c++;
+		j=1;
+		while (j <= y)
+		{
+		if (i== 1 | i==x)
+		{
+			if (j == 1 | j == y)
+			{
+				ft_putchar('o');
+			}
+			else
+			{
+				ft_putchar('-');
+			}
+		}
+		else
+		{
+			if (j==1 | j == y)
+			{
+				ft_putchar('|');
+			}
+			else
+			{
+				ft_putchar(' ');
+			}
+		}
+
+		j++;
+		}
+		ft_putchar('\n');
+		i++;	
 	}
 }

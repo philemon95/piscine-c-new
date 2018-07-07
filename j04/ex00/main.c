@@ -1,30 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_alphabet.c                                :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: phperrot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/04 09:00:34 by phperrot          #+#    #+#             */
-/*   Updated: 2018/07/06 14:50:49 by phperrot         ###   ########.fr       */
+/*   Created: 2018/07/06 16:15:08 by phperrot          #+#    #+#             */
+/*   Updated: 2018/07/06 16:24:40 by phperrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+int		ft_iterative_factorial(int nb);
 
-int		ft_putchar(char c);
-
-void	ft_print_alphabet(void)
+int		main(void)
 {
-	char c;
-	int i;
-
-	c = 'a';
-	i = 0;
-	while (i < 26)
-	{
-		ft_putchar(c);
-		i = i + 1;
-		c++;
-	}
+	ft_iterative_factorial(8);
+	return (0);
 }

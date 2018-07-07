@@ -6,17 +6,11 @@
 /*   By: phperrot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/05 10:39:09 by phperrot          #+#    #+#             */
-/*   Updated: 2018/07/05 10:45:02 by phperrot         ###   ########.fr       */
+/*   Updated: 2018/07/06 11:33:26 by phperrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-int     ft_putchar(char c);
-
-void ft_ft(int *nbr)
+void	ft_ft(int *nbr)
 {
-
-*nbr = 42;
-	
+	*nbr = 42;
 }

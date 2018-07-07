@@ -1,30 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_alphabet.c                                :+:      :+:    :+:   */
+/*   ft_recursive_factorial.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: phperrot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/04 09:00:34 by phperrot          #+#    #+#             */
-/*   Updated: 2018/07/06 14:50:49 by phperrot         ###   ########.fr       */
+/*   Created: 2018/07/06 16:35:52 by phperrot          #+#    #+#             */
+/*   Updated: 2018/07/06 16:56:17 by phperrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+int resultat = 1; 
 
-int		ft_putchar(char c);
-
-void	ft_print_alphabet(void)
+int ft_recursive_factorial(int nb)
 {
-	char c;
-	int i;
-
-	c = 'a';
-	i = 0;
-	while (i < 26)
+if (nb > 1)
 	{
-		ft_putchar(c);
-		i = i + 1;
-		c++;
+	resultat = nb * ft_recursive_factorial(nb - 1);
 	}
+return (resultat);
 }
+

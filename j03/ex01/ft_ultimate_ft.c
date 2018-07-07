@@ -1,30 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_alphabet.c                                :+:      :+:    :+:   */
+/*   ft_ft.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: phperrot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/04 09:00:34 by phperrot          #+#    #+#             */
-/*   Updated: 2018/07/06 14:50:49 by phperrot         ###   ########.fr       */
+/*   Created: 2018/07/05 10:39:09 by phperrot          #+#    #+#             */
+/*   Updated: 2018/07/06 11:37:55 by phperrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-int		ft_putchar(char c);
-
-void	ft_print_alphabet(void)
+void	ft_ultimate_ft(int *********nbr)
 {
-	char c;
-	int i;
-
-	c = 'a';
-	i = 0;
-	while (i < 26)
-	{
-		ft_putchar(c);
-		i = i + 1;
-		c++;
-	}
+	*********nbr = 42;
 }

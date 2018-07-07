@@ -1,30 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_alphabet.c                                :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: phperrot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/04 09:00:34 by phperrot          #+#    #+#             */
-/*   Updated: 2018/07/06 14:50:49 by phperrot         ###   ########.fr       */
+/*   Created: 2018/07/07 12:29:16 by phperrot          #+#    #+#             */
+/*   Updated: 2018/07/07 12:50:37 by phperrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include <unistd.h>
 
-int		ft_putchar(char c);
+int ft_putchar(char c);
 
-void	ft_print_alphabet(void)
+void	rush(int x, int y);
+
+int 	main(void)
 {
-	char c;
-	int i;
-
-	c = 'a';
-	i = 0;
-	while (i < 26)
-	{
-		ft_putchar(c);
-		i = i + 1;
-		c++;
-	}
+	rush(4,4);
+	return(0);
 }
+
+
