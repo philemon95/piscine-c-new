@@ -1,36 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sqrt.c                                          :+:      :+:    :+:   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: phperrot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/07 16:49:34 by phperrot          #+#    #+#             */
-/*   Updated: 2018/07/09 16:48:51 by phperrot         ###   ########.fr       */
+/*   Created: 2018/07/09 14:59:22 by phperrot          #+#    #+#             */
+/*   Updated: 2018/07/09 15:40:08 by phperrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_sqrt(int nb)
+int	ft_strlen(char *str)
 {
-	int racine;
-	int resultat;
+	int i;
 
-	racine = 0;
-	resultat = 0;
-	while (racine <= (nb / 2) && resultat == 0)
+	i = 0;
+	while (str[i] != '\0')
 	{
-		if (racine * racine == nb)
-		{
-			resultat = 1;
-		}
-		racine = racine + 1;
+		i++;
 	}
-	if (resultat == 1)
+
+	return (i);
+}
+
+char *ft_strcat(char *dest, char *src)
+{
+	int i;
+
+	i = 0;
+	while (dest[i])
 	{
-		return (racine - 1);
+		
 	}
-	else
-	{
-		return (0);
-	}
+	return ("salut");	
 }

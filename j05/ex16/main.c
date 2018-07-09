@@ -1,37 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sqrt.c                                          :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: phperrot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/07 16:49:34 by phperrot          #+#    #+#             */
-/*   Updated: 2018/07/07 17:16:59 by phperrot         ###   ########.fr       */
+/*   Created: 2018/07/09 15:01:12 by phperrot          #+#    #+#             */
+/*   Updated: 2018/07/09 15:40:11 by phperrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_sqrt(int nb)
-{
-	int racine;
-	int resultat;
+#include<stdio.h>
+#include <string.h>
+char *ft_strcat(char *dest, char *src);
 
-	racine = 0;
-	resultat = 0;
-	
-	while (racine <= (nb / 2) &&  resultat == 0)
-	{
-		if (racine * racine == nb)
-		{
-			resultat = 1;
-		}
-		racine = racine + 1;
-	}
-	if (resultat == 1)
-	{
-		return(racine - 1);
-	}
-	else 
-	{
-		return (0);
-	}
+int		main(void)
+{
+	char hi[] = "salut";
+	char dest[65] = "bonj";
+
+	printf("%s",strcat(dest, hi));
+	return (0);
 }
