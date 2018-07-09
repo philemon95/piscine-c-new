@@ -6,7 +6,7 @@
 /*   By: phperrot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/04 18:06:03 by phperrot          #+#    #+#             */
-/*   Updated: 2018/07/06 15:13:20 by phperrot         ###   ########.fr       */
+/*   Updated: 2018/07/09 10:17:42 by phperrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char *ft_strrev(char *str);
 
 int		main(void)
 {
-	char str[]="salut";
+	char str[]="abcde";
 	ft_putstr(ft_strrev(str));
 	return (0);
 }

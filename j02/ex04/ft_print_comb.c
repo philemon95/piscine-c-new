@@ -6,7 +6,7 @@
 /*   By: phperrot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/06 14:56:53 by phperrot          #+#    #+#             */
-/*   Updated: 2018/07/06 15:03:16 by phperrot         ###   ########.fr       */
+/*   Updated: 2018/07/08 12:18:23 by phperrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ void	display(char i, char j, char k)
 		ft_putchar(' ');
 	}
 }
+
 void	ft_print_comb(void)
 {
 	int i;

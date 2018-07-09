@@ -6,13 +6,13 @@
 /*   By: phperrot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/06 13:07:46 by phperrot          #+#    #+#             */
-/*   Updated: 2018/07/06 15:38:26 by phperrot         ###   ########.fr       */
+/*   Updated: 2018/07/09 10:17:45 by phperrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	leng(char *str)
+int			leng(char *str)
 {
-	int i;
+	int		i;
 
 	i = 0;
 	while (str[i] != '\0')
@@ -22,15 +22,15 @@ int	leng(char *str)
 	return (i);
 }
 
-char	*ft_strrev(char *str)
+char		*ft_strrev(char *str)
 {
-	int j;
-	int len;
-	char tmp;
+	int		j;
+	int		len;
+	char	tmp;
 
 	len = leng(str);
 	j = 0;
-	while (j <= len / 2)
+	while (j < len / 2)
 	{
 		tmp = str[j];
 		str[j] = str[len - j - 1];
