@@ -6,7 +6,7 @@
 /*   By: phperrot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/07 17:02:08 by phperrot          #+#    #+#             */
-/*   Updated: 2018/07/07 17:13:11 by phperrot         ###   ########.fr       */
+/*   Updated: 2018/07/10 17:29:24 by phperrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,6 @@ int 	ft_sqrt(int nb);
 
 int 	main(void)
 {
-	printf("%d", ft_sqrt(144));
+	printf("%d", ft_sqrt(24));
 	return (0);
 }

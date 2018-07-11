@@ -6,7 +6,7 @@
 /*   By: phperrot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/05 15:15:59 by phperrot          #+#    #+#             */
-/*   Updated: 2018/07/08 12:26:55 by phperrot         ###   ########.fr       */
+/*   Updated: 2018/07/11 10:44:16 by phperrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,7 @@ int					ft_puttens(unsigned int n)
 			ft_putchar('0');
 		}
 		ft_puttens(n);
+		return (0);
 	}
 	else
 	{

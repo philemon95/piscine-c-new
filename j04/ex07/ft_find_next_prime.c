@@ -6,7 +6,7 @@
 /*   By: phperrot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/07 18:26:37 by phperrot          #+#    #+#             */
-/*   Updated: 2018/07/09 16:54:01 by phperrot         ###   ########.fr       */
+/*   Updated: 2018/07/10 13:59:20 by phperrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int		ft_sqrt(int nb)
 
 	racine = 0;
 	resultat = 0;
-	while (racine <= (nb / 2) && resultat == 0)
+	while (racine <= (nb / 2) && racine <= 46341 && resultat == 0)
 	{
 		if (racine * racine == nb)
 		{
@@ -44,7 +44,7 @@ int		ft_is_prime(int nb)
 	i = 1;
 	racine = ft_sqrt(nb);
 	premier = 1;
-	if (nb == 0 | nb == 1)
+	if (nb <= 1)
 	{
 		premier = 0;
 	}

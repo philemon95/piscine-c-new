@@ -6,7 +6,7 @@
 /*   By: phperrot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/07 16:49:34 by phperrot          #+#    #+#             */
-/*   Updated: 2018/07/09 16:48:51 by phperrot         ###   ########.fr       */
+/*   Updated: 2018/07/10 14:06:15 by phperrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int		ft_sqrt(int nb)
 
 	racine = 0;
 	resultat = 0;
-	while (racine <= (nb / 2) && resultat == 0)
+	while (racine <= (nb / 2) && racine <= 46341 && resultat == 0)
 	{
 		if (racine * racine == nb)
 		{

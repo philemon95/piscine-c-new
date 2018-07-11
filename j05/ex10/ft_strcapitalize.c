@@ -6,22 +6,30 @@
 /*   By: phperrot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/09 14:35:26 by phperrot          #+#    #+#             */
-/*   Updated: 2018/07/09 14:56:38 by phperrot         ###   ########.fr       */
+/*   Updated: 2018/07/10 15:58:47 by phperrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char *ft_strcapitalize(char *str)
+char	*ft_strcapitalize(char *str)
 {
 	int i;
 
-	if (str[0] >= 97 && str[0] <=122)
+	if (str[0] >= 97 && str[0] <= 122)
 	{
 		str[0] = str[0] - 32;
 	}
-		i = 1;
+	i = 1;
 	while (str[i] != '\0')
 	{
-		if ((str[i] >= 97 && str[i] <=122) && ((str[i-1] < 48) | (str[i-1] > 57 && str[i-1] < 65) | (str[i-1] > 90 && str[i-1] < 97) | (str[i-1] > 122)))
+		if ((str[i] >= 65 && str[i] <= 90) && ((str[i - 1] < 48) |
+					!(str[i - 1] > 57 && str[i - 1] < 65) | (str[i - 1] > 90
+						&& str[i - 1] < 97) | (str[i - 1] > 122)))
+		{
+			str[i] = str[i] + 32;
+		}
+		if ((str[i] >= 97 && str[i] <= 122) && ((str[i - 1] < 48) |
+					(str[i - 1] > 57 && str[i - 1] < 65) | (str[i - 1] > 90
+						&& str[i - 1] < 97) | (str[i - 1] > 122)))
 		{
 			str[i] = str[i] - 32;
 		}

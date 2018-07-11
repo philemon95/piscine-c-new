@@ -6,7 +6,7 @@
 /*   By: phperrot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/08 19:25:43 by phperrot          #+#    #+#             */
-/*   Updated: 2018/07/09 14:56:34 by phperrot         ###   ########.fr       */
+/*   Updated: 2018/07/10 16:13:33 by phperrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,7 @@ char *ft_strcapitalize(char *str);
 
 int	main(void)
 {
-	char str[]="salut, comment tu vas ? 42mots quarante-deux; cinquante+et+un";	
+	char str[]="sA LUT, comment tu vas ? 42mots quarante-deux; cinquante+et+un";	
 	ft_putstr(ft_strcapitalize(str));
 	return (0);
-
 }

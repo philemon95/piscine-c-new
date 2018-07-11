@@ -6,7 +6,7 @@
 /*   By: phperrot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/06 16:04:31 by phperrot          #+#    #+#             */
-/*   Updated: 2018/07/09 16:43:53 by phperrot         ###   ########.fr       */
+/*   Updated: 2018/07/10 14:04:22 by phperrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,17 @@ int		ft_iterative_factorial(int nb)
 
 	i = 1;
 	resultat = 1;
-	while (i <= nb)
+	if (nb >= 0 && nb <= 12)
 	{
-		resultat = resultat * i;
-		i++;
+		while (i <= nb)
+		{
+			resultat = resultat * i;
+			i++;
+		}
+		return (resultat);
 	}
-	return (resultat);
+	else
+	{
+		return (0);
+	}
 }

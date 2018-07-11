@@ -6,7 +6,7 @@
 /*   By: phperrot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/08 10:51:00 by phperrot          #+#    #+#             */
-/*   Updated: 2018/07/08 11:43:07 by phperrot         ###   ########.fr       */
+/*   Updated: 2018/07/11 10:44:21 by phperrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int		ft_putnbr(int nb);
 
 int		main(void)
 {
-	ft_putnbr(-90003050);
+	ft_putnbr(0);
 
 	return (0);
 }

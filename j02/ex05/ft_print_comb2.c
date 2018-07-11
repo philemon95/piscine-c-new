@@ -6,7 +6,7 @@
 /*   By: phperrot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/05 03:43:48 by phperrot          #+#    #+#             */
-/*   Updated: 2018/07/05 12:01:58 by phperrot         ###   ########.fr       */
+/*   Updated: 2018/07/11 10:36:05 by phperrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int		ft_putchar(char c);
 
 void	display(int i, int j, int k, int l)
 {
-	if (i * 10 + j < k * 10 + l && i + j + k + l < 35)
+	if (i * 10 + j < k * 10 + l && !(i == 9 && j == 8 && k == 9 && l == 9))
 	{
 		ft_putchar('0' + i);
 		ft_putchar('0' + j);

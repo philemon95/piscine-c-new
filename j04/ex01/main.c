@@ -6,7 +6,7 @@
 /*   By: phperrot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/06 16:15:08 by phperrot          #+#    #+#             */
-/*   Updated: 2018/07/06 16:56:27 by phperrot         ###   ########.fr       */
+/*   Updated: 2018/07/10 17:37:14 by phperrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdio.h>
@@ -15,6 +15,6 @@ int		ft_recursive_factorial(int nb);
 
 int		main(void)
 {
-	printf("%d",ft_recursive_factorial(8));
+	printf("%d",ft_recursive_factorial(15));
 	return (0);
 }
