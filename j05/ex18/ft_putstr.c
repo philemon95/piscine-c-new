@@ -1,39 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: phperrot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/09 15:01:12 by phperrot          #+#    #+#             */
-/*   Updated: 2018/07/12 11:09:38 by phperrot         ###   ########.fr       */
+/*   Created: 2018/07/08 18:29:31 by phperrot          #+#    #+#             */
+/*   Updated: 2018/07/08 18:34:47 by phperrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stdio.h>
-#include <string.h>
+#include <unistd.h>
 
-int 	ft_putchar(char c);
+int		ft_putchar(char c);
 
-void	ft_putstr(char *str);
-
-char *ft_strcat(char *dest, char *src);
-
-int		main(void)
+void	ft_putstr(char *str)
 {
-	char hi[] = "ssu";
-	char dest[50] = "adjewio";
-/*	int i;
+	int i;
 	
-	i = -1;
-	while (i++ < 10)
+	i = 0;
+	while (str[i] != '\0')
 	{
-		ft_putchar('0'-dest[i]);
-		ft_putchar('\n');
+		ft_putchar(str[i]);
+		i++;
 	}
-*/	ft_putstr(ft_strcat(dest, hi));
-	ft_putchar('\n');
-	ft_putchar('\n');
-	ft_putstr(strcat(dest, hi));
-	return (0);
 }

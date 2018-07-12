@@ -6,7 +6,7 @@
 /*   By: phperrot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/09 15:01:12 by phperrot          #+#    #+#             */
-/*   Updated: 2018/07/12 11:09:38 by phperrot         ###   ########.fr       */
+/*   Updated: 2018/07/12 11:36:37 by phperrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,14 @@ int 	ft_putchar(char c);
 
 void	ft_putstr(char *str);
 
-char *ft_strcat(char *dest, char *src);
+char *ft_strncat(char *dest, char *src, int n);
 
 int		main(void)
 {
-	char hi[] = "ssu";
+	char hi[] = "stuvwxyz";
 	char dest[50] = "adjewio";
-/*	int i;
+	int	 n = 3;
+	/*	int i;
 	
 	i = -1;
 	while (i++ < 10)
@@ -31,9 +32,9 @@ int		main(void)
 		ft_putchar('0'-dest[i]);
 		ft_putchar('\n');
 	}
-*/	ft_putstr(ft_strcat(dest, hi));
+*/	ft_putstr(ft_strncat(dest, hi, n));
 	ft_putchar('\n');
 	ft_putchar('\n');
-	ft_putstr(strcat(dest, hi));
+	ft_putstr(strncat(dest, hi, n));
 	return (0);
 }
