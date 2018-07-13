@@ -1,30 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_printable.c                              :+:      :+:    :+:   */
+/*   ft_fight.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: phperrot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/08 23:02:47 by phperrot          #+#    #+#             */
-/*   Updated: 2018/07/12 14:30:57 by phperrot         ###   ########.fr       */
+/*   Created: 2018/07/13 16:40:36 by phperrot          #+#    #+#             */
+/*   Updated: 2018/07/13 16:41:33 by phperrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef __FT_PERSO_H__
+#define __FT_PERSO_H__
+#endif
 
-int		 ft_str_is_printable(char *str)
-{
-	int i;
-	int is_printable;
-
-	i = 0;
-	is_printable = 1;
-	while (str[i] != '\0')
-	{
-		if ((str[i] <= 31 | str[i] >= 127))
-		{
-			is_printable = 0;
-		}
-		i++;
-	}
-	return (is_printable);
-}
+#define KICK "kick"
+#define PUNCH "punch"
+#define HEADBUTT "headbutt"
+#include "ft_fight.c"

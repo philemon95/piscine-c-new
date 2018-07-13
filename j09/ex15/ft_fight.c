@@ -1,18 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sort_params.c                                   :+:      :+:    :+:   */
+/*   ft_fight.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: phperrot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/09 22:58:10 by phperrot          #+#    #+#             */
-/*   Updated: 2018/07/12 12:32:18 by phperrot         ###   ########.fr       */
+/*   Created: 2018/07/13 10:13:43 by phperrot          #+#    #+#             */
+/*   Updated: 2018/07/13 15:43:11 by phperrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-int		ft_putchar(char c);
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
 
 void	ft_putstr(char *str)
 {
@@ -59,28 +60,27 @@ int		ft_strcmp(char *s1, char *s2)
 	return (difference);
 }
 
-int		main(int argc, char **argv)
+void	ft_fight(t_perso *offender, t_perso *defender, char *attack)
 {
-	int	i;
-	char*tmp;
-
-	i = 1;
-	while (i < argc - 1)
+	if (!(offender->life <= 0 | defender->life <= 0))
 	{
-		if (ft_strcmp(argv[i], argv[i + 1]) > 0)
+		if ((ft_strcmp(attack, "kick") == 0))
+			(defender->life = defender->life - 15);
+		if (ft_strcmp(attack, "punch"))
+			defender->life -= 5;
+		if (ft_strcmp(attack, "headbutt"))
+			defender->life -= 20;
+		ft_putstr(offender->name);
+		ft_putstr(" does a judo ");
+		ft_putstr(attack);
+		ft_putstr(" on ");
+		ft_putstr(defender->name);
+		ft_putstr(".\n");
+		if (defender->life <= 0)
 		{
-			tmp = argv[i];
-			argv[i] = argv[i + 1];
-			argv[i + 1] = tmp;
-			i = 0;
+			ft_putstr(defender->name);
+			ft_putstr(" is dead");
+			ft_putstr(".\n");
 		}
-		i++;
-	}
-	i = 1;
-	while (i <= argc - 1)
-	{
-		ft_putstr(argv[i]);
-		ft_putchar('\n');
-		i++;
 	}
 }

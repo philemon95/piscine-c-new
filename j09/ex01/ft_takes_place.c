@@ -1,43 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_takes_place.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: phperrot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/12 11:39:04 by phperrot          #+#    #+#             */
-/*   Updated: 2018/07/12 11:49:23 by phperrot         ###   ########.fr       */
+/*   Created: 2018/07/12 18:28:52 by phperrot          #+#    #+#             */
+/*   Updated: 2018/07/12 18:47:52 by phperrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_putchar(char c);
+#include <stdio.h>
 
-int		ft_strlen(char *str)
+char	*conv_char(int hour)
 {
-	int i;
-
-	i = 0;
-	while (str[i] != '\0')
+	if (hour < 12 | hour == 24)
 	{
-		i++;
+		return ("A.M.");
 	}
-	return (i);
+	else
+	{
+		return ("P.M.");
+	}
 }
 
-char	*ft_strcat(char *dest, char *src)
+int		conv_nb(int hour)
 {
-	int i;
-	int size_src;
-	int size_dest;
-
-	size_src = ft_strlen(src);
-	size_dest = ft_strlen(dest);
-	i = 0;
-	while (i < size_src)
+	if (hour % 12 == 0)
 	{
-		dest[size_dest + i] = src[i];
-		i++;
+		hour = 12;
 	}
-	dest[size_dest + i] = '\0';
-	return (dest);
+	if (hour > 12)
+	{
+		(hour -= 12);
+	}
+	return (hour);
+}
+
+void	ft_takes_place(int hour)
+{
+	printf("THE FOLLOWING TAKES PLACE BETWEEN %d.00 %s AND %d.00 %s\n",
+		conv_nb(hour), conv_char(hour), conv_nb(hour + 1), conv_char(hour + 1));
 }

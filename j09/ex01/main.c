@@ -1,30 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_printable.c                              :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: phperrot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/08 23:02:47 by phperrot          #+#    #+#             */
-/*   Updated: 2018/07/12 14:30:57 by phperrot         ###   ########.fr       */
+/*   Created: 2018/07/12 17:48:59 by phperrot          #+#    #+#             */
+/*   Updated: 2018/07/12 18:32:41 by phperrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+void        ft_takes_place(int hour);
 
-int		 ft_str_is_printable(char *str)
+int		main(void)
 {
-	int i;
-	int is_printable;
-
-	i = 0;
-	is_printable = 1;
-	while (str[i] != '\0')
-	{
-		if ((str[i] <= 31 | str[i] >= 127))
-		{
-			is_printable = 0;
-		}
-		i++;
-	}
-	return (is_printable);
+	ft_takes_place(0);
 }

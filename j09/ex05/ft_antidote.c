@@ -1,30 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_printable.c                              :+:      :+:    :+:   */
+/*   ft_antidote.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: phperrot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/08 23:02:47 by phperrot          #+#    #+#             */
-/*   Updated: 2018/07/12 14:30:57 by phperrot         ###   ########.fr       */
+/*   Created: 2018/07/12 21:44:26 by phperrot          #+#    #+#             */
+/*   Updated: 2018/07/12 22:01:45 by phperrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-int		 ft_str_is_printable(char *str)
+int		ft_antidote(int i, int j, int k)
 {
-	int i;
-	int is_printable;
+	int tmp;
 
-	i = 0;
-	is_printable = 1;
-	while (str[i] != '\0')
-	{
-		if ((str[i] <= 31 | str[i] >= 127))
-		{
-			is_printable = 0;
-		}
-		i++;
-	}
-	return (is_printable);
+	if ((i <= j && i >= k) | (i >= j && i <= k))
+		return (i);
+	if ((j <= i && j >= k) | (j >= i && j <= k))
+		return (j);
+	return (k);
 }

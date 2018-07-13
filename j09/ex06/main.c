@@ -1,30 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_printable.c                              :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: phperrot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/08 23:02:47 by phperrot          #+#    #+#             */
-/*   Updated: 2018/07/12 14:30:57 by phperrot         ###   ########.fr       */
+/*   Created: 2018/07/13 13:59:02 by phperrot          #+#    #+#             */
+/*   Updated: 2018/07/13 14:10:14 by phperrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+void ft_destroy(char ***factory);
 
-int		 ft_str_is_printable(char *str)
+int	main(void)
 {
-	int i;
-	int is_printable;
+	char a;
+	char *ptr1;
+	char **ptr2;
+	char ***ptr3;
 
-	i = 0;
-	is_printable = 1;
-	while (str[i] != '\0')
-	{
-		if ((str[i] <= 31 | str[i] >= 127))
-		{
-			is_printable = 0;
-		}
-		i++;
-	}
-	return (is_printable);
+	a = 'a';
+	ptr1 = &a;
+	ptr2 = &ptr1;
+	ptr3 = &ptr2;
+	ft_destroy(ptr3);
+	return(0);
 }
+

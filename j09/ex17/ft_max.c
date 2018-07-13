@@ -1,30 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_printable.c                              :+:      :+:    :+:   */
+/*   ft_max.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: phperrot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/08 23:02:47 by phperrot          #+#    #+#             */
-/*   Updated: 2018/07/12 14:30:57 by phperrot         ###   ########.fr       */
+/*   Created: 2018/07/13 16:32:28 by phperrot          #+#    #+#             */
+/*   Updated: 2018/07/13 16:32:43 by phperrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-int		 ft_str_is_printable(char *str)
+int		ft_max(int *tab, int length)
 {
 	int i;
-	int is_printable;
+	int max;
 
 	i = 0;
-	is_printable = 1;
-	while (str[i] != '\0')
+	if (length >= 0)
+		max = tab[0];
+	while (i < length)
 	{
-		if ((str[i] <= 31 | str[i] >= 127))
-		{
-			is_printable = 0;
-		}
+		if (tab[i] > max)
+			max = tab[i];
 		i++;
 	}
-	return (is_printable);
+	return (max);
 }

@@ -1,30 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_printable.c                              :+:      :+:    :+:   */
+/*   ft_collatz_conjecture.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: phperrot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/08 23:02:47 by phperrot          #+#    #+#             */
-/*   Updated: 2018/07/12 14:30:57 by phperrot         ###   ########.fr       */
+/*   Created: 2018/07/13 14:13:56 by phperrot          #+#    #+#             */
+/*   Updated: 2018/07/13 14:27:25 by phperrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+int g_count = 0;
 
-int		 ft_str_is_printable(char *str)
+unsigned int	ft_collatz_conjecture(unsigned int base)
 {
-	int i;
-	int is_printable;
-
-	i = 0;
-	is_printable = 1;
-	while (str[i] != '\0')
+	if (base != 1)
 	{
-		if ((str[i] <= 31 | str[i] >= 127))
+		g_count++;
+		if (base % 2 == 0)
 		{
-			is_printable = 0;
+			ft_collatz_conjecture(base / 2);
+			return (g_count);
 		}
-		i++;
+		else
+		{
+			ft_collatz_conjecture(base * 3 + 1);
+			return (g_count);
+		}
 	}
-	return (is_printable);
+	return (g_count);
 }

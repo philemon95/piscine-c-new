@@ -1,30 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_printable.c                              :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: phperrot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/08 23:02:47 by phperrot          #+#    #+#             */
-/*   Updated: 2018/07/12 14:30:57 by phperrot         ###   ########.fr       */
+/*   Created: 2018/07/06 13:04:38 by phperrot          #+#    #+#             */
+/*   Updated: 2018/07/06 13:05:19 by phperrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-int		 ft_str_is_printable(char *str)
+int	ft_strlen(char *str)
 {
 	int i;
-	int is_printable;
 
 	i = 0;
-	is_printable = 1;
 	while (str[i] != '\0')
 	{
-		if ((str[i] <= 31 | str[i] >= 127))
-		{
-			is_printable = 0;
-		}
 		i++;
 	}
-	return (is_printable);
+	return (i);
 }

@@ -1,30 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_printable.c                              :+:      :+:    :+:   */
+/*   ft_rot42.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: phperrot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/08 23:02:47 by phperrot          #+#    #+#             */
-/*   Updated: 2018/07/12 14:30:57 by phperrot         ###   ########.fr       */
+/*   Created: 2018/07/12 20:54:58 by phperrot          #+#    #+#             */
+/*   Updated: 2018/07/13 16:18:28 by phperrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-int		 ft_str_is_printable(char *str)
+char	*ft_rot42(char *str)
 {
 	int i;
-	int is_printable;
 
 	i = 0;
-	is_printable = 1;
-	while (str[i] != '\0')
+	while (str[i] != 0)
 	{
-		if ((str[i] <= 31 | str[i] >= 127))
+		if (str[i] >= 'A' && str[i] <= 'Z')
 		{
-			is_printable = 0;
+			str[i] = (str[i] - 'A' + 42) % 26 + 'A';
+		}
+		if (str[i] >= 'a' && str[i] <= 'z')
+		{
+			str[i] = (str[i] - 'a' + 42) % 26 + 'a';
 		}
 		i++;
 	}
-	return (is_printable);
+	return (str);
 }
