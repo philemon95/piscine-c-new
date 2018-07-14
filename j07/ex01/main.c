@@ -5,19 +5,15 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: phperrot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/11 17:48:22 by phperrot          #+#    #+#             */
-/*   Updated: 2018/07/14 10:23:13 by phperrot         ###   ########.fr       */
+/*   Created: 2018/07/14 10:25:59 by phperrot          #+#    #+#             */
+/*   Updated: 2018/07/14 10:29:51 by phperrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char        *ft_strdup(char *src);
+int     *ft_range(int min, int max);
 
-int			main(void)
+int 	main(void)
 {
-	char	*str;
-
-	str = "bonjour";
-	ft_strdup(str);
-	return (0);
+	ft_range(50,0);
+	return(0);
 }
-
