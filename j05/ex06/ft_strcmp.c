@@ -6,13 +6,13 @@
 /*   By: phperrot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/09 12:37:04 by phperrot          #+#    #+#             */
-/*   Updated: 2018/07/09 12:58:18 by phperrot         ###   ########.fr       */
+/*   Updated: 2018/07/16 11:37:48 by phperrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
+int		ft_strlen(char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (str[i] != '\0')
@@ -22,9 +22,7 @@ int	ft_strlen(char *str)
 	return (i);
 }
 
-
-
-int ft_strcmp(char *s1, char *s2)
+int		ft_strcmp(char *s1, char *s2)
 {
 	int difference;
 	int i;
@@ -42,6 +40,5 @@ int ft_strcmp(char *s1, char *s2)
 			difference = s1[i] - s2[i];
 		}
 	}
-
-return (difference);
+	return (difference);
 }

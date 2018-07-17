@@ -6,9 +6,13 @@
 /*   By: phperrot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/14 10:59:51 by phperrot          #+#    #+#             */
-/*   Updated: 2018/07/14 11:13:47 by phperrot         ###   ########.fr       */
+/*   Updated: 2018/07/17 18:13:30 by phperrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <stdio.h>
+
+#include <stdlib.h>
 
 int			length(char *str)
 {
@@ -22,25 +26,47 @@ int			length(char *str)
 	return (i);
 }
 
-char *ft_concat_params(int argc, char **argv)
+char		*fill_string(char *str, int global_length, char **argv, int argc)
 {
-	int i;
-	int global_length;
-	char *str;
-	i = 1
+	int		i;
+	int		j;
+	int		k;
+
+	i = 1;
+	k = 0;
+	while (i < argc)
+	{
+		j = 0;
+		while (argv[i][j] != '\0')
+		{
+			str[k] = argv[i][j];
+			k++;
+			j++;
+		}
+		if (k < global_length - 1)
+			str[k] = '\n';
+		k++;
+		i++;
+	}
+	return (str);
+}
+
+char		*ft_concat_params(int argc, char **argv)
+{
+	int		i;
+	int		global_length;
+	char	*str;
+
+	i = 0;
 	global_length = 0;
 	if (argc > 1)
 	{
-		while (i < argc)
-		{
-			global_length += length(argv[i])
-			i++;
-		}
-		global_length += argc - 1 -1; /*# of '\n'*/
+		while (i++ < argc)
+			global_length += length(argv[i]);
+		global_length += argc - 1 - 1;
 		str = malloc(sizeof(*str) * (global_length + 1));
-		
-		i = 0;
-		while (i < global_length)
-			
+		str = fill_string(str, global_length, argv, argc);
+		return (str);
 	}
+	return (NULL);
 }

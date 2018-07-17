@@ -6,80 +6,79 @@
 /*   By: phperrot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/12 12:51:57 by phperrot          #+#    #+#             */
-/*   Updated: 2018/07/12 16:31:47 by phperrot         ###   ########.fr       */
+/*   Updated: 2018/07/17 14:34:25 by phperrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
+
 int		ft_putchar(char c);
 
-int		ft_is_free(int column, int row, int *queen)
+int		ft_check(int **board, int col, int row)
 {
 	int i;
-   	int res;
-	i = 1;
-	res = 1;
-	while (i <= column)
-	{
-		if (queen[i] == row)
-		{
-			res = 0;
-		}
-		if (queen[i] - i == column -  row)
-		{
-			res = 0;
-		}	
+	/* a etoffer, pour l instant seulement pour test */
+	printf("Entering ft_check \n");
 
-		if (i +  queen[i] == column + row)
-		{
-			res = 0;
-		}
-	i++;
-	}
+	i = -1;
+	while (++i < 8)
+	{
+		printf("Entering loop #%d\n", i);
+		printf("Entering loop col = %d  \n", col);	
 	
-			return(res);
+		if (board[col][i] == 1)
+			return 0;
+	}
+	return 1;
 }
-
-int    ft_print_solution(int *queen, int size)
+int 	ft_print(int **board)
 {
 	int i;
-
-	i = 0;
-	while (i++ < size)
-		ft_putchar('0' + queen[i]);
-		ft_putchar('\n');
-	return (0);
+	int row;
+	i = -1;
+	row = 2;
+	while (++i < 8)
+	{
+		ft_putchar('0' + board[i][row]);
+	}
 }
 
-void	ft_queenboard(int column, int row, int *queen, int size)
+
+int 	ft_fill(int **board,int col,int row)
 {
-	if (column > size)
+	printf("Entering ft_fill \n");
+	if (ft_check(board, col, row))
 	{
-		column = 1;
-		row ++ ;
-		ft_print_solution(queen, size);
-	}
-	while (row <= size && column <= size)
-	{
-		if (ft_is_free(column, row, queen) == 1)
+		printf("Entering case \n");
+		board[col][row] = 1;
+		if (col < 7)
+			ft_fill(board, col + 1,0);
+		else 
 		{
-			queen[column - 1] = row;
-			ft_queenboard(column + 1, 1, queen, size);
+			ft_print(board);
+			ft_fill(board,col,row + 1);
 		}
-		row++;
+	}
+	else 
+	{
+		board[col][row] = 0;
+		ft_fill(board, col, row+1);
 	}
 }
 
 void ft_eight_queens_puzzle_2(int size)
 {
-	int queen[size + 1];	
+	int board[size][size];
 	int i;
-	
-	i = 0;
-	while (i <= size)
+	int j;
+	printf("entering the loop\n");
+	i = -1;
+	while (++i < size)
 	{
-		queen[i] = 2;
-		i++;
+		j = -1;
+		while (++j <size)
+			board[i][j] = 0;
 	}
-	ft_queenboard( 1, 1, queen, size);
+	ft_fill(board, 0, 0);
 
 }

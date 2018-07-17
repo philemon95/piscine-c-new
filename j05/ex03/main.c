@@ -6,7 +6,7 @@
 /*   By: phperrot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/09 10:39:53 by phperrot          #+#    #+#             */
-/*   Updated: 2018/07/09 11:29:34 by phperrot         ###   ########.fr       */
+/*   Updated: 2018/07/17 15:24:17 by phperrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <unistd.h>
@@ -21,14 +21,14 @@ void	ft_putstr(char *str);
 
 int		main(void)
 {
-	char src[] = "salut";
-	char dest[] = "yell";
-	char dest1[] = "yell";
-	char dest2[] = "yell";
-/*	ft_putstr(strcpy(dest,src));
-*/	ft_putchar('\n');
-	ft_putstr(dest1);
+	char src[] = "sal";
+	char dest2[] = "bonjour";
+
+	ft_putchar('+');
+
+	ft_putstr(strcpy(dest2,src));
 	ft_putchar('\n');
+	ft_putchar('-');
 	ft_putstr(ft_strcpy(dest2,src));
 
 	return(0);

@@ -6,7 +6,7 @@
 /*   By: phperrot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/08 19:25:43 by phperrot          #+#    #+#             */
-/*   Updated: 2018/07/08 21:18:19 by phperrot         ###   ########.fr       */
+/*   Updated: 2018/07/16 11:42:53 by phperrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char *ft_strlowcase(char *str);
 
 int	main(void)
 {
-	char str[]="SALUT?";	
+	char str[]="SALUT CA VA?";	
 	ft_putstr(ft_strlowcase(str));
 	return (0);
 

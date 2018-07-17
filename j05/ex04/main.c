@@ -6,7 +6,7 @@
 /*   By: phperrot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/09 10:39:53 by phperrot          #+#    #+#             */
-/*   Updated: 2018/07/09 11:58:29 by phperrot         ###   ########.fr       */
+/*   Updated: 2018/07/17 15:46:45 by phperrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <unistd.h>
@@ -25,7 +25,7 @@ int		main(void)
 	char dest[] = "yell0ofejoi0";
 	char dest1[] = "yell";
 	char dest2[] = "yell0ofejoi0";
-	unsigned int n=5;
+	unsigned int n=3;
 	ft_putstr(strncpy(dest,src,n));
 	ft_putchar('\n');
 	ft_putstr(dest1);

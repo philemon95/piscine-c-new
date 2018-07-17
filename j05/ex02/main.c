@@ -6,7 +6,7 @@
 /*   By: phperrot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/04 18:06:03 by phperrot          #+#    #+#             */
-/*   Updated: 2018/07/08 17:32:42 by phperrot         ###   ########.fr       */
+/*   Updated: 2018/07/16 11:22:46 by phperrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,14 @@
 #include <stdlib.h>
 #include <string.h>
 
-int     leng(char *str);
 
-int ft_atoi(char *str);
+char    *ft_strcpy(char *dest, char *src)
 
 int		main(void)
 {
 	char str[]="08$";
-
-	printf("\n \n  %d \n \n", ft_atoi(str));
-	printf("\n \n  %d \n \n", atoi(str));
+	char dest[] = "bonjour"
+	printf("\n \n  %d \n \n", strcpy(dest, str));
+	printf("\n \n  %d \n \n", ft_strcpy(dest, str));
 	return (0);
 }

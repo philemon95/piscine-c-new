@@ -6,7 +6,7 @@
 /*   By: phperrot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/09 17:22:41 by phperrot          #+#    #+#             */
-/*   Updated: 2018/07/10 16:26:13 by phperrot         ###   ########.fr       */
+/*   Updated: 2018/07/16 12:15:36 by phperrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@ void ft_putnbr_base(int nbr, char *base);
 
 int	 main(void)
 {
-	ft_putnbr_base(1001, "b-ac");
+	ft_putnbr_base(1001, "baca");
 }

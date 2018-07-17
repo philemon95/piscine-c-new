@@ -6,7 +6,7 @@
 /*   By: phperrot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/11 14:36:43 by phperrot          #+#    #+#             */
-/*   Updated: 2018/07/12 10:01:46 by phperrot         ###   ########.fr       */
+/*   Updated: 2018/07/17 15:27:30 by phperrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,5 +50,5 @@ char	*ft_strstr(char *str, char *to_find)
 	{
 		return (str + i);
 	}
-	return ("");
+	return (0);
 }

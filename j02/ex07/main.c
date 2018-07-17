@@ -6,13 +6,11 @@
 /*   By: phperrot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/11 09:01:07 by phperrot          #+#    #+#             */
-/*   Updated: 2018/07/11 12:51:26 by phperrot         ###   ########.fr       */
+/*   Updated: 2018/07/17 18:19:37 by phperrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-int	ft_puchar(char c);
+int	ft_putchar(char c);
 
 void ft_putnbr(int nb);
 

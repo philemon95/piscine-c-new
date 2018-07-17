@@ -6,14 +6,24 @@
 /*   By: phperrot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/14 10:25:59 by phperrot          #+#    #+#             */
-/*   Updated: 2018/07/14 10:29:51 by phperrot         ###   ########.fr       */
+/*   Updated: 2018/07/16 14:45:04 by phperrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <stdio.h>
 
 int     *ft_range(int min, int max);
 
 int 	main(void)
 {
-	ft_range(50,0);
+	int *dig;
+	int i;
+	i = 0;
+	dig = ft_range(0,50);
+	while(i < 51)
+	{
+		printf("%d,", ft_range(0,50)[i]);
+		i++;
+	}
 	return(0);
 }

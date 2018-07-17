@@ -6,7 +6,7 @@
 /*   By: phperrot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/14 10:19:11 by phperrot          #+#    #+#             */
-/*   Updated: 2018/07/14 10:35:29 by phperrot         ###   ########.fr       */
+/*   Updated: 2018/07/16 14:45:01 by phperrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,10 @@ int		*ft_range(int min, int max)
 	int	*tab;
 	int len;
 	int i;
+
 	if (min >= max)
 	{
-		return(NULL);
+		return (NULL);
 	}
 	else
 	{
@@ -29,8 +30,8 @@ int		*ft_range(int min, int max)
 		while (i < len - 1)
 		{
 			tab[i] = min + i;
-			i ++;
+			i++;
 		}
-		return(tab);
+		return (tab);
 	}
 }

@@ -6,18 +6,15 @@
 /*   By: phperrot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/09 17:08:18 by phperrot          #+#    #+#             */
-/*   Updated: 2018/07/10 16:26:16 by phperrot         ###   ########.fr       */
+/*   Updated: 2018/07/16 12:14:28 by phperrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<unistd.h>
+#include <unistd.h>
 
-void ft_putchar(char c)
-{
-	write(1, &c, 1);
-}
+int		ft_putchar(char c);
 
-int	ft_strlen(char *str)
+int		ft_strlen(char *str)
 {
 	int i;
 
@@ -45,7 +42,8 @@ int		ft_recursive_power(int nb, int power)
 		return (nb);
 	}
 }
-int 	exceptions(char *base)
+
+int		exceptions(char *base)
 {
 	int i;
 	int j;
@@ -53,42 +51,26 @@ int 	exceptions(char *base)
 	int signe;
 
 	i = 0;
-	redondance = 0; 
+	redondance = 0;
 	signe = 0;
-	while (i < ft_strlen(base))
-		{
-		j = 0;
-		while (j < ft_strlen(base))
-		{
-			if (i != j && base[i] == base [j])
-			{
+	while (i++ < ft_strlen(base))
+	{
+		j = -1;
+		while (j++ < ft_strlen(base))
+			if (i != j && base[i] == base[j])
 				redondance = 1;
-			}
-			j ++;
-		}
-		i ++;
 	}
- 	i = 0;
-	while (i < ft_strlen(base) &&  signe == 0)
-	{
+	i = -1;
+	while (i++ < ft_strlen(base) && signe == 0)
 		if (base[i] == '+' | base[i] == '-')
-		{
 			signe = 1;
-		}
-		i++;
-	}
-	if (ft_strlen(base) <= 1 | redondance ==1 | signe == 1)
-	{
+	if (ft_strlen(base) <= 1 | redondance == 1 | signe == 1)
 		return (0);
-	}
-	else 
-	{
+	else
 		return (1);
-	}
+}
 
-}	
-
-void ft_putnbr_base(int nbr, char *base)
+void	ft_putnbr_base(int nbr, char *base)
 {
 	int nb_base;
 	int n;
@@ -99,7 +81,7 @@ void ft_putnbr_base(int nbr, char *base)
 	{
 		while (nbr / ft_recursive_power(nb_base, n) > 1)
 		{
-		 	n ++;	
+			n++;
 		}
 		while (n >= 0)
 		{

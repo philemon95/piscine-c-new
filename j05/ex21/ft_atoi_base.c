@@ -6,7 +6,7 @@
 /*   By: phperrot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/12 11:54:01 by phperrot          #+#    #+#             */
-/*   Updated: 2018/07/12 12:49:14 by phperrot         ###   ########.fr       */
+/*   Updated: 2018/07/16 12:23:21 by phperrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	ft_atoi(char *str)
 	i = 0;
 	sign = 1;
 	while (str[i] == '\n' | str[i] == '\r' | str[i] == '\t'
-						| str[i] == '\f' | str[i] == '\v' | str[i] == ' ')
+			| str[i] == '\f' | str[i] == '\v' | str[i] == ' ')
 	{
 		i++;
 	}
@@ -53,22 +53,22 @@ int	ft_strlen(char *str)
 
 int		ft_recursive_power(int nb, int power)
 {
-		if (power < 0)
-		{
-			return (0);
-		}
-		if (power == 0)
-		{
-			return (1);
-		}
-		else
-		{
-			nb = nb * ft_recursive_power(nb, power - 1);
-			return (nb);
-		}
+	if (power < 0)
+	{
+		return (0);
+	}
+	if (power == 0)
+	{
+		return (1);
+	}
+	else
+	{
+		nb = nb * ft_recursive_power(nb, power - 1);
+		return (nb);
+	}
 }
 
-int 	exceptions(char *base)
+int		exceptions(char *base)
 {
 	int i;
 	int j;
@@ -78,39 +78,24 @@ int 	exceptions(char *base)
 	i = 0;
 	redondance = 0;
 	signe = 0;
-	while (i < ft_strlen(base))
+	while (i++ < ft_strlen(base))
 	{
-		j = 0;
-		while (j < ft_strlen(base))
-		{
-			if (i != j && base[i] == base [j])
-			{
+		j = -1;
+		while (j++ < ft_strlen(base))
+			if (i != j && base[i] == base[j])
 				redondance = 1;
-			}
-			j ++;
-		}
-		i ++;
 	}
- 	i = 0;
-	while (i < ft_strlen(base) &&  signe == 0)
-	{
+	i = -1;
+	while (i++ < ft_strlen(base) && signe == 0)
 		if (base[i] == '+' | base[i] == '-')
-		{
 			signe = 1;
-		}
-		i++;
-	}
-	if (ft_strlen(base) <= 1 | redondance ==1 | signe == 1)
-	{
+	if (ft_strlen(base) <= 1 | redondance == 1 | signe == 1)
 		return (0);
-	}
 	else
-	{
 		return (1);
-	}
 }
 
-void	ft_putnbr_base(int nbr, char *base)
+int		ft_putnbr_base(int nbr, char *base)
 {
 	int nb_base;
 	int n;
@@ -121,7 +106,7 @@ void	ft_putnbr_base(int nbr, char *base)
 	{
 		while (nbr / ft_recursive_power(nb_base, n) > 1)
 		{
-		 	n ++;
+			n++;
 		}
 		while (n >= 0)
 		{
