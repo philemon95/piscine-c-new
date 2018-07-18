@@ -6,7 +6,7 @@ int	main(void)
 {
 	char *str;
 
-	str = "bonjour comment ca va";
+	str = "       \n      bonjour comment ca va   ";
 
 	ft_print_words_tables(ft_split_whitespaces(str));
 

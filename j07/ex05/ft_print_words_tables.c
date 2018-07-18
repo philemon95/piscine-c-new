@@ -6,11 +6,11 @@
 /*   By: phperrot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/14 16:42:27 by phperrot          #+#    #+#             */
-/*   Updated: 2018/07/16 21:32:53 by phperrot         ###   ########.fr       */
+/*   Updated: 2018/07/18 21:33:38 by phperrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_putchar(char c);
+void	ft_putchar(char c);
 
 void	ft_putstr(char *str)
 {

@@ -6,79 +6,95 @@
 /*   By: phperrot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/12 12:51:57 by phperrot          #+#    #+#             */
-/*   Updated: 2018/07/17 14:34:25 by phperrot         ###   ########.fr       */
+/*   Updated: 2018/07/18 16:03:15 by phperrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-int		ft_putchar(char c);
-
-int		ft_check(int **board, int col, int row)
+void ft_print(int *board)
 {
-	int i;
-	/* a etoffer, pour l instant seulement pour test */
-	printf("Entering ft_check \n");
+	int i = 0;
 
-	i = -1;
-	while (++i < 8)
+	while (i < 7)
 	{
-		printf("Entering loop #%d\n", i);
-		printf("Entering loop col = %d  \n", col);	
-	
-		if (board[col][i] == 1)
-			return 0;
+		printf("%d", board[i]);
+		i++;
 	}
-	return 1;
-}
-int 	ft_print(int **board)
-{
-	int i;
-	int row;
-	i = -1;
-	row = 2;
-	while (++i < 8)
-	{
-		ft_putchar('0' + board[i][row]);
-	}
+	printf("\n");
 }
 
-
-int 	ft_fill(int **board,int col,int row)
+int ft_checkcell(int row,int filloption, int *board)
 {
-	printf("Entering ft_fill \n");
-	if (ft_check(board, col, row))
+	int i;
+	i = 0;
+	printf("\nentering checkcell for option #%d \n", filloption);
+
+	while (i < row)
 	{
-		printf("Entering case \n");
-		board[col][row] = 1;
-		if (col < 7)
-			ft_fill(board, col + 1,0);
-		else 
+		if (board[i] == filloption) // ligne
+			{
+			printf("\nA, %d\n", i);
+			printf("board[i]= %d\n", board[i]);
+			printf("board[row]= %d", board[row]);
+				return (0);
+			}
+		if (i - board[i] == row - filloption)//diagonal 
 		{
-			ft_print(board);
-			ft_fill(board,col,row + 1);
+			printf("\nB, %d\n", i);	
+			return (0);
+		}
+		if (i + board[i] == row + filloption)//diagonale /
+		{
+			printf("\nC, %d\n", i);
+			printf("i=%d\n", i);
+			printf("board[i] = %d\n", board[i]);
+			printf("board[row] = %d\n", board[row]);	
+			return (0);
+		}
+		i++;
+	}
+	return(1);
+}
+
+int ft_fill(int row, int *board)
+{
+	int filloption;
+
+	printf("entering ft_fill for column # %d\n\n", row);
+	filloption = 1;
+	if (row > 7)
+	{
+		ft_print(board);
+		return (1);
+	}
+	while (filloption <= 8)
+	{
+		if (!(ft_checkcell(row, filloption, board)))
+		{	
+			filloption++;	
+		}
+		else
+		{
+			board[row] = filloption;
+			printf("checkcell reussi\n");
+			if(ft_fill(row+1, board))
+				return (1);
 		}
 	}
-	else 
-	{
-		board[col][row] = 0;
-		ft_fill(board, col, row+1);
-	}
+	return (0);
+
 }
 
-void ft_eight_queens_puzzle_2(int size)
+void ft_eight_queens_puzzle_2(void)
 {
-	int board[size][size];
-	int i;
-	int j;
-	printf("entering the loop\n");
-	i = -1;
-	while (++i < size)
-	{
-		j = -1;
-		while (++j <size)
-			board[i][j] = 0;
-	}
-	ft_fill(board, 0, 0);
+	int board[8];
+	int i = 0;
 
+	while (i < 8)
+	{
+		board[i] = 0;
+		i++;
+	}
+	ft_fill(0, board);
 }

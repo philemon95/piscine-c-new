@@ -6,7 +6,7 @@
 /*   By: phperrot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/14 16:50:33 by phperrot          #+#    #+#             */
-/*   Updated: 2018/07/17 17:49:06 by phperrot         ###   ########.fr       */
+/*   Updated: 2018/07/18 17:03:05 by phperrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,28 @@ int			convert_decimal(char *nbr, int basef_size)
 	}
 	return (decimal);
 }
-
+char 		*convert_basef_nbr(char *nbr, char *basefrom)
+{
+	int size_nbr;
+	int size_base;
+	int i;
+	int j;
+	size_nbr = ft_strlen(nbr);
+	size_base = ft_strlen(basefrom);
+	i = 0;
+	printf("je suis ici, %c", nbr[3]);
+		while (nbr[i] != '\0')
+		{
+			j = 0;
+			while (j < size_base && nbr[i] != basefrom[j])
+			{
+				j++;
+			}
+			nbr[3] = '0';
+		i++;
+		}
+	return (nbr);	
+}
 int			convert_baset(int nbr, char *base_to)
 {
 	int		baset_size;

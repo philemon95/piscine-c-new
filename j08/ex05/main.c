@@ -1,6 +1,10 @@
 #include "ft_stock_par.h"
+#include <stdio.h>
 
-int		main(int ac, char** av)
+struct s_stock_par *ft_param_to_tab(int ac, char **av);
+
+int    main(int argc, char **argv)
 {
-		struct s_stcok_par *ft_param_to_tab(int ac, char **av);
+	printf("%d", ft_param_to_tab(argc, argv)[1].size_param);
+	return (0);
 }

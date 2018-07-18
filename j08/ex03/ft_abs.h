@@ -6,13 +6,11 @@
 /*   By: phperrot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/15 21:50:00 by phperrot          #+#    #+#             */
-/*   Updated: 2018/07/15 21:52:17 by phperrot         ###   ########.fr       */
+/*   Updated: 2018/07/18 09:43:31 by phperrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef __FT__ABS_H__
-#define __FT__ABS_H__
-
-#define ABS(Value) ((Value >= 0) ? Value : -Value)
-
-#endif
+#	ifndef __FT_ABS_H
+#	define __FT_ABS_H
+#	define ABS(Value) ((Value >= 0)?Value:-Value)
+#	endif

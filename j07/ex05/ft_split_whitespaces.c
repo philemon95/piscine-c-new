@@ -6,12 +6,11 @@
 /*   By: phperrot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/14 11:16:49 by phperrot          #+#    #+#             */
-/*   Updated: 2018/07/15 20:46:13 by phperrot         ###   ########.fr       */
+/*   Updated: 2018/07/18 21:40:57 by phperrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include <stdio.h>
 
 int			ft_go_to_first_word(char *str)
 {
@@ -30,7 +29,7 @@ int			ft_get_words_number(char *str)
 	int		i;
 
 	i = 0;
-	nb_words = 1;
+	nb_words = 0;
 	while (str[i + 1] != '\0')
 	{
 		if (((str[i] == ' ') | (str[i] == '\n') | (str[i] == '\r')
@@ -70,27 +69,27 @@ int			*ft_whiles(char *str, int j)
 
 char		**ft_split_whitespaces(char *str)
 {
-	int		*incrementeurs;
+	int		*inc;
 	int		nb_words;
 	char	**tabwords;
 	int		*res;
 
-	incrementeurs = (int *)malloc(sizeof(int) * 4);
-	incrementeurs[1] = ft_go_to_first_word(str);
+	inc = (int *)malloc(sizeof(int) * 4);
+	inc[1] = ft_go_to_first_word(str);
 	nb_words = ft_get_words_number(str);
 	res = (int *)malloc(sizeof(int) * 4);
 	tabwords = (char **)malloc(sizeof(char*) * (nb_words + 1));
-	incrementeurs[0] = -1;
-	while (incrementeurs[0]++ < nb_words - 1)
+	inc[0] = -1;
+	while (inc[0]++ < nb_words - 1)
 	{
-		res = ft_whiles(str, incrementeurs[1]);
-		incrementeurs[1] = res[1];
-		tabwords[incrementeurs[0]] = (char*)malloc(sizeof(char) * (res[0] + 1));
-		incrementeurs[2] = -1;
-		while (incrementeurs[2]++ < res[0] - 1)
-			tabwords[incrementeurs[0]][incrementeurs[2]] =
-			str[incrementeurs[2] + res[2]];
-		incrementeurs[1]++;
+		res = ft_whiles(str, inc[1]);
+		inc[1] = res[1];
+		tabwords[inc[0]] = (char*)malloc(sizeof(char) * (res[0] + 1));
+		inc[2] = -1;
+		while (inc[2]++ < res[0] - 1)
+			tabwords[inc[0]][inc[2]] = str[inc[2] + res[2]];
+		tabwords[inc[0]][inc[2]] = '\0';
+		inc[1]++;
 	}
 	tabwords[nb_words] = 0;
 	return (tabwords);

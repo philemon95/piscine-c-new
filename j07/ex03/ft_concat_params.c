@@ -6,11 +6,9 @@
 /*   By: phperrot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/14 10:59:51 by phperrot          #+#    #+#             */
-/*   Updated: 2018/07/17 18:13:30 by phperrot         ###   ########.fr       */
+/*   Updated: 2018/07/18 21:19:48 by phperrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdio.h>
 
 #include <stdlib.h>
 
@@ -48,6 +46,7 @@ char		*fill_string(char *str, int global_length, char **argv, int argc)
 		k++;
 		i++;
 	}
+	str[k - 1] = '\0';
 	return (str);
 }
 
@@ -61,12 +60,12 @@ char		*ft_concat_params(int argc, char **argv)
 	global_length = 0;
 	if (argc > 1)
 	{
-		while (i++ < argc)
+		while (i++ < argc - 1)
 			global_length += length(argv[i]);
-		global_length += argc - 1 - 1;
+		global_length += argc;
 		str = malloc(sizeof(*str) * (global_length + 1));
 		str = fill_string(str, global_length, argv, argc);
 		return (str);
 	}
-	return (NULL);
+	return (0);
 }

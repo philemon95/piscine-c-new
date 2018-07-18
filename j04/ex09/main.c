@@ -6,17 +6,17 @@
 /*   By: phperrot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/12 14:42:11 by phperrot          #+#    #+#             */
-/*   Updated: 2018/07/17 14:34:28 by phperrot         ###   ########.fr       */
+/*   Updated: 2018/07/18 16:03:17 by phperrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 int		ft_putchar(char c);
 
-void ft_eight_queens_puzzle_2(int size);
+void ft_eight_queens_puzzle_2(void);
 
 int		main(void)
 {
-	ft_eight_queens_puzzle_2(8);
+	ft_eight_queens_puzzle_2();
 	return (0);
 }

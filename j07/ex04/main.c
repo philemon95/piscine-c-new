@@ -7,15 +7,16 @@ char **ft_split_whitespaces(char *str);
 
 int	main(void)
 {
-	char *str;
 	char **res;
+	char *str;
 	int i;
 	int j;
-	str = "bonjour                  comment ca";
+
+	str = "                     bonjour 9a ca";
 	res = ft_split_whitespaces(str);
 	i = 0;
 	j = 0;
-	while (i < 3)
+	while (i <  3)
 	{
 		while (res[i][j] != '\0')
 		{

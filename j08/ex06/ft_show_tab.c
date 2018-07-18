@@ -6,9 +6,11 @@
 /*   By: phperrot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/16 09:12:45 by phperrot          #+#    #+#             */
-/*   Updated: 2018/07/16 09:45:02 by phperrot         ###   ########.fr       */
+/*   Updated: 2018/07/18 22:34:52 by phperrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "ft_stock_par.h"
 
 void	ft_putstr(char *str)
 {
@@ -85,6 +87,7 @@ int					ft_puttens(unsigned int n)
 		ft_putchar('0' + n);
 		return (n);
 	}
+	return(n);
 }
 
 void				ft_putnbr(int nb)
@@ -95,24 +98,29 @@ void				ft_putnbr(int nb)
 	n = ft_puttens(n);
 }
 
+#include "stdio.h"
 
 void ft_show_tab(struct s_stock_par *par)
 {
 	int i;
 	int j;
-	i = -1;
-	while (par[i] != 0)
+	printf("Entering \n");
+	i = 0;
+	while (par[i].str != '\0')
 	{
+		printf("Entering 1st loop\n");
 		j = 0;
 		ft_putstr(par->copy);
 		ft_putchar('\n');
 		ft_putnbr(par->size_param);
 		ft_putchar('\n');
-		while (par->tab[j] != 0)
-		{
-			ft_putstr(tab[j];
+		while (par->tab[j] != '\0')
+		{	
+			printf("Entering 2nd loop \n");
+			ft_putstr(par->tab[j]);
 			ft_putchar('\n');
 			j++;	
 		}
+		i++;
 	}
 }

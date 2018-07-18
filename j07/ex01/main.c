@@ -6,7 +6,7 @@
 /*   By: phperrot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/14 10:25:59 by phperrot          #+#    #+#             */
-/*   Updated: 2018/07/16 14:45:04 by phperrot         ###   ########.fr       */
+/*   Updated: 2018/07/18 20:54:22 by phperrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int 	main(void)
 	int i;
 	i = 0;
 	dig = ft_range(0,50);
-	while(i < 51)
+	while(i < 50)
 	{
 		printf("%d,", ft_range(0,50)[i]);
 		i++;

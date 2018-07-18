@@ -1,23 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_map.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: phperrot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/06 13:04:38 by phperrot          #+#    #+#             */
-/*   Updated: 2018/07/06 13:05:19 by phperrot         ###   ########.fr       */
+/*   Created: 2018/07/18 17:42:45 by phperrot          #+#    #+#             */
+/*   Updated: 2018/07/18 17:52:20 by phperrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
+#include <stdlib.h>
+
+int	*ft_map(int *tab, int length, int (*f)(int))
 {
 	int i;
+	int *tab_r;
 
-	i = 0;
-	while (str[i] != '\0')
-	{
-		i++;
-	}
-	return (i);
+	if (!(tab_r = malloc(sizeof(int) * length)))
+		return (0);
+	i = -1;
+	while (++i < length)
+		tab_r[i] = f(tab[i]);
+	return (tab_r);
 }
