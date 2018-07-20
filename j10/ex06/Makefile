@@ -6,14 +6,16 @@
 #    By: phperrot <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/07/18 19:43:51 by phperrot          #+#    #+#              #
-#    Updated: 2018/07/18 19:49:11 by phperrot         ###   ########.fr        #
+#    Updated: 2018/07/19 17:33:32 by phperrot         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 all: compilation
 
-compilation: gcc -Wall -Wextra -Werror -c ft_doop.c -o do-op
+compilation: 
+	gcc -Wall -Wextra -Werror main.c ft_functions.c ft_display_functions.c -I ft_header.h -o do-op
 
-clean: 	 rm -f *.o
+clean:
+	rm -f do-op
 
 

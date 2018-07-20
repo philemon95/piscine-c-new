@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_advanced_sort_wordtab.c                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: phperrot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/11 17:48:22 by phperrot          #+#    #+#             */
-/*   Updated: 2018/07/19 18:11:38 by phperrot         ###   ########.fr       */
+/*   Created: 2018/07/19 18:24:27 by phperrot          #+#    #+#             */
+/*   Updated: 2018/07/19 18:30:03 by phperrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
-char        *ft_strdup(char *src);
-
-int			main(void)
+void ft_advanced_sort_wordtab(char **tab, int(*cmp)(char *, char *));
 {
-	char	*str;
+	int i;
+	int *tmp;
 
-	str = "Hello 42!@#$";
-	printf("%s",ft_strdup(str));
-	return (0);
+	i = 0;
+	while (i < ft_strlen(*tab) - 1)
+	{
+		if (cmp(tab[i], tab[i+1]i) < 0)
+		{
+			tmp = tab[i];
+			tab[i] = tab[i + 1];
+			tab[i + 1] = tab[i];
+			i = -1;
+		}
+		i++;
+	}
 }
-

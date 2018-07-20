@@ -6,7 +6,7 @@
 /*   By: phperrot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/14 10:59:51 by phperrot          #+#    #+#             */
-/*   Updated: 2018/07/18 21:19:48 by phperrot         ###   ########.fr       */
+/*   Updated: 2018/07/19 12:06:37 by phperrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,5 +67,5 @@ char		*ft_concat_params(int argc, char **argv)
 		str = fill_string(str, global_length, argv, argc);
 		return (str);
 	}
-	return (0);
+	return ("");
 }

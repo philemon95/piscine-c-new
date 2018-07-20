@@ -1,25 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: phperrot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/11 17:48:22 by phperrot          #+#    #+#             */
-/*   Updated: 2018/07/19 18:11:38 by phperrot         ###   ########.fr       */
+/*   Created: 2018/07/04 18:02:56 by phperrot          #+#    #+#             */
+/*   Updated: 2018/07/04 18:04:53 by phperrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include <unistd.h>
 
-char        *ft_strdup(char *src);
-
-int			main(void)
+int		ft_putchar(char c)
 {
-	char	*str;
-
-	str = "Hello 42!@#$";
-	printf("%s",ft_strdup(str));
+	write(1, &c, 1);
 	return (0);
 }
-

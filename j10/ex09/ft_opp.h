@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_opp.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: phperrot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/11 17:48:22 by phperrot          #+#    #+#             */
-/*   Updated: 2018/07/19 18:11:38 by phperrot         ###   ########.fr       */
+/*   Created: 2018/07/19 18:35:27 by phperrot          #+#    #+#             */
+/*   Updated: 2018/07/19 18:35:57 by phperrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#ifndef FT_OPP_H
+# define FT_OPP_H
 
-char        *ft_strdup(char *src);
-
-int			main(void)
+t_opp g_opptab[] =
 {
-	char	*str;
-
-	str = "Hello 42!@#$";
-	printf("%s",ft_strdup(str));
-	return (0);
-}
-
+	{"+", &ft_add},
+	{"-", &ft_sub},
+	{"*", &ft_mul},
+	{"/", &ft_div},
+	{"%", &ft_mod},
+	{"", &ft_usage}
+};
+#endif

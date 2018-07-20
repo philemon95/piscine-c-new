@@ -6,7 +6,7 @@
 /*   By: phperrot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/14 11:16:49 by phperrot          #+#    #+#             */
-/*   Updated: 2018/07/16 21:24:44 by phperrot         ###   ########.fr       */
+/*   Updated: 2018/07/19 13:36:35 by phperrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,10 @@ int			ft_get_words_number(char *str)
 	int		i;
 
 	i = 0;
-	nb_words = 1;
+	nb_words = 0;
+	if (!((str[0] == ' ') | (str[0] == '\n') | (str[0] == '\r') |
+				(str[0] == '\t') | (str[0] == '\v') | (str[0] == '\0')))
+		nb_words++;
 	while (str[i + 1] != '\0')
 	{
 		if (((str[i] == ' ') | (str[i] == '\n') | (str[i] == '\r')

@@ -6,7 +6,7 @@
 /*   By: phperrot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/11 08:57:14 by phperrot          #+#    #+#             */
-/*   Updated: 2018/07/18 22:38:56 by phperrot         ###   ########.fr       */
+/*   Updated: 2018/07/18 22:44:21 by phperrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,20 +30,21 @@ int	ft_incr_check(int size)
 {
 	int i;
 	int tmp;
-
+	int nb;
 	i = -1;
 	tmp = -1;
+	nb = powerten(size - 2);
 	while (++i <= size)
 	{
 //		printf("%d", i);
 //		printf("\nnbr / powerten = %d\n", nbr/powerten(size -i)); 
 //		printf("tmp = %d\n\n", tmp);
-		if (*nb / powerten(size - i) <= tmp)
+		if (nb / powerten(size - i) <= tmp)
 			return 0;
-		if (*nb / powerten(size - i) > size - i)
-			*nb += powerten(size - i); // nouveaute 
-		tmp = *nb / powerten(size - i); 
-		*nb = *nb % powerten(size - i);
+		if (nb / powerten(size - i) > size - i)
+			nb += powerten(size - i); // nouveautes
+		tmp = nb / powerten(size - i); 
+		nb = nb % powerten(size - i);
 	}
 	return(1);
 }
@@ -64,7 +65,7 @@ void ft_print_combn(int n)
 	{
 		//veriication avant afficahge
 		if (*nb < powerten(size - 1))
-				if (ft_incr_check(*nb, size - 1))
+				if (ft_incr_check(size - 1))
 					printf("0%d, ", *nb);
 		if (ft_incr_check(size))
 		{
