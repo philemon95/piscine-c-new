@@ -5,25 +5,17 @@
 #                                                     +:+ +:+         +:+      #
 #    By: phperrot <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2018/07/18 11:36:05 by phperrot          #+#    #+#              #
-#    Updated: 2018/07/20 13:36:07 by phperrot         ###   ########.fr        #
+#    Created: 2018/07/18 19:43:51 by phperrot          #+#    #+#              #
+#    Updated: 2018/07/20 16:34:59 by phperrot         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC = ft_putchar.c ft_putstr.c ft_strcmp.c ft_strlen.c ft_swap.c
-.O = ft_putchar.o ft_putstr.o ft_strcmp.o ft_strlen.o ft_swap.o
-HEADER = ../includes/ft.h
-LIB = libft.a
-
 all: compilation
 
-compilation:
-	gcc -c $(addprefix srcs/, $(SRC)) -I $(addprefix includes/, $(HEADER))  && ar rc $(LIB) $(.O)
+compilation: 
+	gcc -Wall -Wextra -Werror main.c ft_functions.c ft_display_functions.c -I ft_header.h -I ft_opp.h -o do-op
 
 clean:
-	 rm -f *.o
+	rm -f do-op
 
-fclean:
-	rm $(LIB)
 
-re: fclean all

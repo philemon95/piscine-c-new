@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_opp.h                                           :+:      :+:    :+:   */
+/*   ft_list_push_back.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: phperrot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/19 18:35:27 by phperrot          #+#    #+#             */
-/*   Updated: 2018/07/20 15:13:41 by phperrot         ###   ########.fr       */
+/*   Created: 2018/07/20 11:56:26 by phperrot          #+#    #+#             */
+/*   Updated: 2018/07/20 13:01:24 by phperrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_OPP_H
-# define FT_OPP_H
-#include "ft_header.h"
+#include "list.h"
 
-t_opp g_opptab[] =
+void ft_list_push_back(t_list **begin_list, void *data);
 {
-	{"+", &ft_add},
-	{"-", &ft_sub},
-	{"*", &ft_mul},
-	{"/", &ft_div},
-	{"%", &ft_mod},
-	{"", &ft_usage}
-};
-#endif
+	t_list *tmp;
+
+	tmp = malloc(sizeof(t_list));
+	if (tmp)
+	{
+		tmp->str = str;
+		tmp->next = list;
+	}
+	return (tmp);
+}

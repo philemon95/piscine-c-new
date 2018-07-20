@@ -1,26 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_opp.h                                           :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: phperrot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/19 18:35:27 by phperrot          #+#    #+#             */
-/*   Updated: 2018/07/20 15:13:41 by phperrot         ###   ########.fr       */
+/*   Created: 2018/07/20 11:44:53 by phperrot          #+#    #+#             */
+/*   Updated: 2018/07/20 11:48:45 by phperrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include <stdio.h>
+#include "ft_list.h"
 
-#ifndef FT_OPP_H
-# define FT_OPP_H
-#include "ft_header.h"
+t_list *ft_create_elem(void *data);
 
-t_opp g_opptab[] =
+int	main(void)
 {
-	{"+", &ft_add},
-	{"-", &ft_sub},
-	{"*", &ft_mul},
-	{"/", &ft_div},
-	{"%", &ft_mod},
-	{"", &ft_usage}
-};
-#endif
+	printf("%s", ft_create_elem("hi")->data);
+	return (0);
+}

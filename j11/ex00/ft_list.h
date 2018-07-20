@@ -1,26 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_opp.h                                           :+:      :+:    :+:   */
+/*   ft_list.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: phperrot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/19 18:35:27 by phperrot          #+#    #+#             */
-/*   Updated: 2018/07/20 15:13:41 by phperrot         ###   ########.fr       */
+/*   Created: 2018/07/20 09:44:22 by phperrot          #+#    #+#             */
+/*   Updated: 2018/07/20 11:59:09 by phperrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_OPP_H
-# define FT_OPP_H
-#include "ft_header.h"
+#	ifndef __FT_LIST_H
+#	define __FT_LIST_H
 
-t_opp g_opptab[] =
+typedef	struct	s_list t_list;
+
+struct 			s_list
 {
-	{"+", &ft_add},
-	{"-", &ft_sub},
-	{"*", &ft_mul},
-	{"/", &ft_div},
-	{"%", &ft_mod},
-	{"", &ft_usage}
-};
-#endif
+	void *data;
+	void *next;
+}				t_list;
+
+#	endif
