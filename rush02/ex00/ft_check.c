@@ -6,7 +6,7 @@
 /*   By: phperrot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/21 14:36:28 by phperrot          #+#    #+#             */
-/*   Updated: 2018/07/21 15:05:07 by phperrot         ###   ########.fr       */
+/*   Updated: 2018/07/21 15:30:48 by phperrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,14 +39,12 @@ int get_cols(char *input)
 	return (i);
 }
 
-int get_check_colle04
+	int	main(void)
+	{
+		char *output;
 
-int	main(void)
-{
-	char *output;
-
-	output = ft_read();
-	printf("%d -- ", get_cols(output));
-	printf("%d",	get_rows(output));
-	return (0);
-}
+		output = ft_read();
+		printf("%d -- ", get_cols(output));
+		printf("%d",	get_rows(output));
+		return (0);
+	}
