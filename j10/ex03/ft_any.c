@@ -6,11 +6,11 @@
 /*   By: phperrot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/18 17:54:02 by phperrot          #+#    #+#             */
-/*   Updated: 2018/07/18 18:09:43 by phperrot         ###   ########.fr       */
+/*   Updated: 2018/07/21 09:42:36 by phperrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_any(char **tab, int(*f)(char*))
+int	ft_any(char **tab, int (*f)(char*))
 {
 	int i;
 

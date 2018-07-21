@@ -1,24 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list.h                                          :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: phperrot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/20 09:44:22 by phperrot          #+#    #+#             */
-/*   Updated: 2018/07/20 16:44:44 by phperrot         ###   ########.fr       */
+/*   Created: 2018/07/21 11:50:30 by phperrot          #+#    #+#             */
+/*   Updated: 2018/07/21 12:15:18 by phperrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#	ifndef __FT_LIST_H
-#	define __FT_LIST_H
+#include "ft_header.h"
 
-typedef	struct	s_list t_list;
-
-struct 			s_list
+int	main(int argc, char ** argv)
 {
-	void *data;
-	void *next;
-}				t_list;
-
-#	endif
+	(void)argc;
+	colle04(argv[1][0] - '0', argv[2][0] - '0');
+	return (0);
+}

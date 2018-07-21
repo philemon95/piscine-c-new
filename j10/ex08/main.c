@@ -1,24 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list.h                                          :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: phperrot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/20 09:44:22 by phperrot          #+#    #+#             */
-/*   Updated: 2018/07/20 16:44:44 by phperrot         ###   ########.fr       */
+/*   Created: 2018/07/21 09:43:52 by phperrot          #+#    #+#             */
+/*   Updated: 2018/07/21 11:23:46 by phperrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#	ifndef __FT_LIST_H
-#	define __FT_LIST_H
+void ft_advanced_sort_wordtab(char **tab, int(*cmp)(char *, char *));
 
-typedef	struct	s_list t_list;
-
-struct 			s_list
+int addition(char *a, char *b)
 {
-	void *data;
-	void *next;
-}				t_list;
+	a[0] = b[0];
+	return (0);
+}
 
-#	endif
+int	main(void)
+{
+	char *tab[2];
+	int (*f)(char *, char *);
+
+	tab[0] = "salut";
+	tab[1] = "bonjour";
+	f = addition; 
+	ft_advanced_sort_wordtab(tab,f);
+}
+

@@ -1,24 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list.h                                          :+:      :+:    :+:   */
+/*   colle-00.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: phperrot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/20 09:44:22 by phperrot          #+#    #+#             */
-/*   Updated: 2018/07/20 16:44:44 by phperrot         ###   ########.fr       */
+/*   Created: 2018/07/21 11:33:58 by phperrot          #+#    #+#             */
+/*   Updated: 2018/07/21 11:44:59 by phperrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#	ifndef __FT_LIST_H
-#	define __FT_LIST_H
-
-typedef	struct	s_list t_list;
-
-struct 			s_list
+void		colle00(int x, int y)
 {
-	void *data;
-	void *next;
-}				t_list;
+	int		i;
+	int		j;
 
-#	endif
+	i = 1;
+	while (i <= y)
+	{
+		j = 1;
+		while (j <= x)
+		{
+			if ((i == 1 || i == y) && (j == 1 || j == x))
+				ft_putchar('o');
+			else if ((i > 1 && i < y) && (j == 1 || j == x))
+				ft_putchar('|');
+			else if ((j > 1 && j < x) && (i == 1 || i == y))
+				ft_putchar('-');
+			else
+				ft_putchar(' ');
+			j++;
+		}
+		if (y > 0)
+			ft_putchar('\n');
+		i++;
+	}
+}

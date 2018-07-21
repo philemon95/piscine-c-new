@@ -1,24 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list.h                                          :+:      :+:    :+:   */
+/*   ft_header.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: phperrot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/20 09:44:22 by phperrot          #+#    #+#             */
-/*   Updated: 2018/07/20 16:44:44 by phperrot         ###   ########.fr       */
+/*   Created: 2018/07/21 11:34:36 by phperrot          #+#    #+#             */
+/*   Updated: 2018/07/21 12:14:33 by phperrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#	ifndef __FT_LIST_H
-#	define __FT_LIST_H
+#ifndef __FT_HEADER_H
+#define __FT_HEADER_H
 
-typedef	struct	s_list t_list;
+void	ft_putchar(char c);
+void	ft_putstr(char *str);
+void	colle00(int x, int y);
+void	colle03(int x, int y);
+void	colle04(int x, int y);
+#endif
 
-struct 			s_list
-{
-	void *data;
-	void *next;
-}				t_list;
-
-#	endif

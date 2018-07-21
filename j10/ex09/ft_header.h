@@ -6,7 +6,7 @@
 /*   By: phperrot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/19 16:08:31 by phperrot          #+#    #+#             */
-/*   Updated: 2018/07/20 16:32:07 by phperrot         ###   ########.fr       */
+/*   Updated: 2018/07/21 09:37:32 by phperrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 #		include <unistd.h>
 
-typedef struct s_struct t_opp;
-struct s_struct 
+typedef struct s_struct	t_opp;
+struct	s_struct
 {
 	char *str;
 	void (*f)(int, int);
@@ -35,6 +35,8 @@ int		ft_negative(int nb);
 void	ft_putnbr(int nb);
 int		ft_atoi(char *str);
 void	ft_symbol(char **av, int int1, int int2);
+int		ft_strlen(char *str);
+int		ft_strcmp(char *s1, char *s2);
 int		main(int ac, char **av);
 
 #		endif

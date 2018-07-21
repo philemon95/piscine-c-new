@@ -6,19 +6,29 @@
 /*   By: phperrot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/19 18:24:27 by phperrot          #+#    #+#             */
-/*   Updated: 2018/07/19 18:30:03 by phperrot         ###   ########.fr       */
+/*   Updated: 2018/07/21 11:15:01 by phperrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void ft_advanced_sort_wordtab(char **tab, int(*cmp)(char *, char *));
+int		ft_strlen(char *str)
 {
 	int i;
-	int *tmp;
+
+	i = 0;
+	while (str[i] != '\0')
+		i++;
+	return (i);
+}
+
+void ft_advanced_sort_wordtab(char **tab, int(*cmp)(char *, char *))
+{
+	int i;
+	char *tmp;
 
 	i = 0;
 	while (i < ft_strlen(*tab) - 1)
 	{
-		if (cmp(tab[i], tab[i+1]i) < 0)
+		if (cmp(tab[i], tab[i+1]) < 0)
 		{
 			tmp = tab[i];
 			tab[i] = tab[i + 1];

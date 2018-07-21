@@ -1,24 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list.h                                          :+:      :+:    :+:   */
+/*   ft_display_functions.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: phperrot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/20 09:44:22 by phperrot          #+#    #+#             */
-/*   Updated: 2018/07/20 16:44:44 by phperrot         ###   ########.fr       */
+/*   Created: 2018/07/21 11:37:00 by phperrot          #+#    #+#             */
+/*   Updated: 2018/07/21 12:01:08 by phperrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#	ifndef __FT_LIST_H
-#	define __FT_LIST_H
+#include <unistd.h>
+#include "ft_header.h"
 
-typedef	struct	s_list t_list;
-
-struct 			s_list
+void	ft_putchar(char c)
 {
-	void *data;
-	void *next;
-}				t_list;
+	write(1, &c, 1);
+}
 
-#	endif
+void	ft_putstr(char *str)
+{
+	int i;
+	
+	i = 0;
+	while (str[i])
+	{
+		ft_putchar(str[i]);
+		i++;
+	}
+}
