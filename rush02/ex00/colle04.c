@@ -6,7 +6,7 @@
 /*   By: phperrot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/21 11:47:50 by phperrot          #+#    #+#             */
-/*   Updated: 2018/07/21 12:16:44 by phperrot         ###   ########.fr       */
+/*   Updated: 2018/07/21 13:12:18 by phperrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,9 @@ void		colle04(int x, int y)
 				ft_putchar('C');
 			else if ((i == y) && (j ==1))
 				ft_putchar('C');
-			else if ((i > 1 && i < y) && (j == 1 || j == x))
-				ft_putchar('A');
 			else if ((i == y) && (j == x))
+				ft_putchar('A');
+			else if ((i > 1 && i < y) && (j == 1 || j == x))
 				ft_putchar('B');
 			else if ((j > 1 && j < x) && (i == 1 || i == y))
 				ft_putchar('B');

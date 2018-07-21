@@ -6,7 +6,7 @@
 /*   By: phperrot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/21 11:34:36 by phperrot          #+#    #+#             */
-/*   Updated: 2018/07/21 12:14:33 by phperrot         ###   ########.fr       */
+/*   Updated: 2018/07/21 14:36:13 by phperrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,5 +18,7 @@ void	ft_putstr(char *str);
 void	colle00(int x, int y);
 void	colle03(int x, int y);
 void	colle04(int x, int y);
+char	*ft_read(void);
+
 #endif
 

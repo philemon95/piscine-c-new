@@ -1,20 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   read.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: phperrot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/21 11:50:30 by phperrot          #+#    #+#             */
-/*   Updated: 2018/07/21 15:03:13 by phperrot         ###   ########.fr       */
+/*   Created: 2018/07/21 13:24:21 by phperrot          #+#    #+#             */
+/*   Updated: 2018/07/21 14:42:07 by phperrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+#include <stdio.h>
+#include <unistd.h>
+#include <stdlib.h>
 
-#include "ft_header.h"
-
-int	main(int argc, char ** argv)
+char *ft_read(void)
 {
-	(void)argc;
-	colle04(argv[1][0] - '0', argv[2][0] - '0');
-	return (0);
+	char *buffer;
+	int ret;
+	buffer = malloc(sizeof(char) * 200 + 1);
+	ret  = (read(STDIN_FILENO, buffer, 200));
+	buffer[ret] = '\0';
+	return (buffer);
 }
