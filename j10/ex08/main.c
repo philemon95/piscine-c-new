@@ -1,31 +1,42 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: phperrot <marvin@42.fr>                    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/21 09:43:52 by phperrot          #+#    #+#             */
-/*   Updated: 2018/07/21 11:23:46 by phperrot         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+#include <stdio.h>
+
+int			ft_strlen(char *str);
+int			ft_strcmp(char *s1, char *s2)
+{
+	int		difference;
+	int		i;
+
+	difference = 0;
+	i = 0;
+	while (difference == 0 && i <= ft_strlen(s1))
+	{
+		if (s1[i] == s2[i])
+		{
+			i++;
+		}
+		else
+		{
+			difference = s1[i] - s2[i];
+		}
+	}
+	return (difference);
+}
 
 void ft_advanced_sort_wordtab(char **tab, int(*cmp)(char *, char *));
+char		**ft_split_whitespaces(char *str);
 
-int addition(char *a, char *b)
+int	main(int argc, char **argv)
 {
-	a[0] = b[0];
-	return (0);
-}
-
-int	main(void)
-{
-	char *tab[2];
+	char **str;
 	int (*f)(char *, char *);
-
-	tab[0] = "salut";
-	tab[1] = "bonjour";
-	f = addition; 
-	ft_advanced_sort_wordtab(tab,f);
+	int i;
+	f = &ft_strcmp;
+	str = ft_split_whitespaces(argv[1]);
+	while (++i < 10)
+		printf("%d-%s\n",i, str[i]);
+	(ft_advanced_sort_wordtab(str, f));
+	i = -1;
+	while (++i < 11)
+		printf("%d+%s\n",i,  str[i]);
+	return (1);
 }
-

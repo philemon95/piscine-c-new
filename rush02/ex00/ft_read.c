@@ -6,7 +6,7 @@
 /*   By: phperrot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/21 13:24:21 by phperrot          #+#    #+#             */
-/*   Updated: 2018/07/21 14:42:07 by phperrot         ###   ########.fr       */
+/*   Updated: 2018/07/22 10:46:31 by phperrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <sys/types.h>
@@ -15,13 +15,29 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <stdlib.h>
+#include "ft_header.h"
 
-char *ft_read(void)
+char* ft_read(void)
 {
-	char *buffer;
+	char *tmp;
 	int ret;
-	buffer = malloc(sizeof(char) * 200 + 1);
-	ret  = (read(STDIN_FILENO, buffer, 200));
-	buffer[ret] = '\0';
-	return (buffer);
+	int i;
+	char ch;
+	i = 0;
+	tmp = malloc(sizeof(char *) * 1);	
+	while  (ret = read(STDIN_FILENO, &ch, 1))
+	{	
+		tmp[i] = ch;
+		i++;
+	}
+	tmp[i] = '\0';
+	printf("%s", tmp);
+	return (tmp);
 }
+/*
+int	main(void)
+{
+	char *string;
+	string = ft_read_size();
+	return(1);
+}*/

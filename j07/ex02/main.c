@@ -6,7 +6,7 @@
 /*   By: phperrot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/14 10:25:59 by phperrot          #+#    #+#             */
-/*   Updated: 2018/07/19 12:01:47 by phperrot         ###   ########.fr       */
+/*   Updated: 2018/07/24 10:09:07 by phperrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,16 +21,16 @@ int 	main(void)
 	int max;
 	int min;
 
-	max = 100;
-	min = 10;
+	max = 2147483647;
+	min = (-211147483648);
 		
 	printf("%d\n", ft_ultimate_range(&a, min, max));
-	i = -1;
+//	i = -1;
 	
-	while (++i < max - min)
-	{
-		printf("%d", a[i]);
-	}	
+//	while (++i < max - min)
+//	{
+//		printf("%d", a[i]);
+//	}	
 
 	return(0);
 }

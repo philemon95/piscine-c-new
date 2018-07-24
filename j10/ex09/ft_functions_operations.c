@@ -6,7 +6,7 @@
 /*   By: phperrot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/19 16:02:39 by phperrot          #+#    #+#             */
-/*   Updated: 2018/07/21 09:27:25 by phperrot         ###   ########.fr       */
+/*   Updated: 2018/07/22 11:51:36 by phperrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,19 @@
 void	ft_add(int int1, int int2)
 {
 	ft_putnbr(int1 + int2);
+	ft_putchar('\n');
 }
 
 void	ft_sub(int int1, int int2)
 {
 	ft_putnbr(int1 - int2);
+	ft_putchar('\n');
 }
 
 void	ft_mul(int int1, int int2)
 {
 	ft_putnbr(int1 * int2);
+	ft_putchar('\n');
 }
 
 void	ft_div(int int1, int int2)
@@ -33,6 +36,7 @@ void	ft_div(int int1, int int2)
 		ft_putstr("Stop : division by zero");
 	else
 		ft_putnbr(int1 / int2);
+	ft_putchar('\n');
 }
 
 void	ft_mod(int int1, int int2)
@@ -41,4 +45,5 @@ void	ft_mod(int int1, int int2)
 		ft_putstr("Stop : modulo by zero");
 	else
 		ft_putnbr(int1 % int2);
+	ft_putchar('\n');
 }

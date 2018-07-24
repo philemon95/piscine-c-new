@@ -6,7 +6,7 @@
 /*   By: phperrot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/21 09:16:44 by phperrot          #+#    #+#             */
-/*   Updated: 2018/07/21 09:36:40 by phperrot         ###   ########.fr       */
+/*   Updated: 2018/07/22 11:53:15 by phperrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ void		ft_usage(int int1, int int2)
 {
 	(void)int1;
 	(void)int2;
-	ft_putstr("error : only [ + - * / % ] are accepted.");
+	ft_putstr("error : only [ + - * / % ] are accepted.\n");
 }
 
 void		ft_symbol(char **av, int int1, int int2)

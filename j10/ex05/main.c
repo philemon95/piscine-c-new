@@ -6,25 +6,31 @@
 /*   By: phperrot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/21 09:43:52 by phperrot          #+#    #+#             */
-/*   Updated: 2018/07/21 09:52:01 by phperrot         ###   ########.fr       */
+/*   Updated: 2018/07/23 14:08:31 by phperrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <stdio.h>
 
 int ft_is_sort(int *tab, int length, int(*f)(int, int));
 
 int addition(int a, int b)
 {
-	return (a + b);
+	if (a < b)
+		return (-1);
+	if (a > b)
+		return (5);
+	else 
+		return (0);
 }
 
 int	main(void)
 {
-	int tab[2];
+	int tab[] = { 1, 3};
 	int (*f)(int, int);
 
-	tab[0] = 3;
-	tab[1] = 5;
 	f = addition; 
-	ft_is_sort(tab, 2,f);
+	printf("%d", ft_is_sort(tab, 2,f));
+
 }
 

@@ -6,21 +6,20 @@
 /*   By: phperrot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/20 11:56:26 by phperrot          #+#    #+#             */
-/*   Updated: 2018/07/20 13:01:24 by phperrot         ###   ########.fr       */
+/*   Updated: 2018/07/24 10:49:11 by phperrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "list.h"
+#include "ft_list.h"
 
-void ft_list_push_back(t_list **begin_list, void *data);
+void	ft_list_push_back(t_list **begin_list, void *data)
 {
 	t_list *tmp;
+	t_list *list;
 
-	tmp = malloc(sizeof(t_list));
-	if (tmp)
-	{
-		tmp->str = str;
-		tmp->next = list;
-	}
-	return (tmp);
+	tmp = ft_create_elem(data);
+	list = *begin_list;
+	while (list->next)
+		list = list->next;
+	list->next = tmp;
 }

@@ -6,7 +6,7 @@
 /*   By: phperrot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/18 19:49:40 by phperrot          #+#    #+#             */
-/*   Updated: 2018/07/19 17:50:25 by phperrot         ###   ########.fr       */
+/*   Updated: 2018/07/22 11:38:08 by phperrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ void		ft_symbol(char **av, int int1, int int2)
 	while (i <= 4 && operations_symb[i] != av[2][0])
 		i++;
 	if (i == 5)
-		ft_putnbr(0);
+		ft_putstr("0\n");
 	else
 	{
 		f = operations_fct[i];
