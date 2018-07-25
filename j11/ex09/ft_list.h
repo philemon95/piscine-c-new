@@ -6,7 +6,7 @@
 /*   By: phperrot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/23 15:20:13 by phperrot          #+#    #+#             */
-/*   Updated: 2018/07/24 16:35:19 by phperrot         ###   ########.fr       */
+/*   Updated: 2018/07/24 22:14:43 by phperrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,5 @@ typedef struct		s_list
 	struct s_list	*next;
 	void			*data;
 }					t_list;
-
-t_list				*ft_create_elem(void *data);
 
 #	endif

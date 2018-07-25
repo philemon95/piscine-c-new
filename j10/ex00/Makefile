@@ -6,7 +6,7 @@
 #    By: phperrot <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/07/18 11:36:05 by phperrot          #+#    #+#              #
-#    Updated: 2018/07/24 16:11:00 by phperrot         ###   ########.fr        #
+#    Updated: 2018/07/25 18:57:44 by phperrot         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,10 +18,11 @@ LIB = libft.a
 all: compilation
 
 compilation:
-	gcc -c $(addprefix srcs/, $(SRC)) -I $(addprefix includes/, $(HEADER))  && ar rc $(LIB) $(.O)
+	gcc -Werror -Wall -Wextra -c $(addprefix srcs/, $(SRC)) -I\
+   	$(addprefix includes/, $(HEADER))  && ar rc $(LIB) $(.O)
 
 clean:
-	 rm -f *.o
+	 rm -f $(.O)
 
 fclean: clean
 	rm $(LIB)

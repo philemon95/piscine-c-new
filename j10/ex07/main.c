@@ -6,7 +6,7 @@ int	main(int argc, char **argv)
 {
 	char **str;
 	int i;
-
+	(void) argc;
 	i = -1;
 	str = ft_split_whitespaces(argv[1]);
 	while (++i < 15)

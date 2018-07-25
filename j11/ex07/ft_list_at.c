@@ -6,7 +6,7 @@
 /*   By: phperrot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/23 16:48:41 by phperrot          #+#    #+#             */
-/*   Updated: 2018/07/24 13:54:48 by phperrot         ###   ########.fr       */
+/*   Updated: 2018/07/24 21:51:32 by phperrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ t_list	*ft_list_at(t_list *begin_list, unsigned int nbr)
 	t_list			*list;
 	unsigned int	i;
 
-	i = 1;
+	i = 0;
 	list = begin_list;
 	while (list && i < nbr)
 	{

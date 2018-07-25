@@ -6,7 +6,7 @@
 /*   By: phperrot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/20 13:30:41 by phperrot          #+#    #+#             */
-/*   Updated: 2018/07/23 11:03:45 by phperrot         ###   ########.fr       */
+/*   Updated: 2018/07/25 20:58:11 by phperrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,127 +15,117 @@
 #include <fcntl.h>
 #include <sys/types.h>
 #include <stdlib.h>
+#include "ft_header.h"
 #define BUF_SIZE 1
-#include <stdio.h>
 
-void	ft_putchar(char c)
+int			g_init;
+int			g_previous_line;
+int			g_nb_files;
+
+void		ft_several_files(int nb_files, char *filename, int j)
 {
-	write(1, &c, 1);
-}
-
-void	ft_putstr(char *str)
-{
-	int i;
-
-	i = 0;
-	while (str[i])
+	(void)j;
+	(void)nb_files;
+	if (g_nb_files > 1)
 	{
-		ft_putchar(str[i]);
-		i++;
+		ft_putstr("==> ");
+		ft_putstr(filename);
+		ft_putstr(" <==\n");
 	}
 }
 
-int	ft_atoi(char *str)
+int			ft_open(char *filename, int j)
 {
-	int nb;
-	int sign;
-	int i;
+	int		fd;
 
-	nb = 0;
-	i = 0;
-	sign = 1;
-	while (str[i] == '\n' | str[i] == '\r' | str[i] == '\t'
-			| str[i] == '\f' | str[i] == '\v' | str[i] == ' ')
+	fd = open(filename, O_RDONLY);
+	if (fd == -1)
 	{
-		i++;
+		if (j != g_init && g_previous_line == -1)
+			ft_putchar('\n');
+		ft_putstr("tail: ");
+		ft_putstr(filename);
+		ft_putstr(": No such file or directory");
 	}
-	if (str[i] == '+' && str[i + 1] != '-')
-		i++;
-	if (str[i] == '-')
-	{
-		sign = -sign;
-		i++;
-	}
-	while ((str[i] - '0') >= 0 && ('9' - str[i]) >= 0)
-	{
-		nb = (nb * 10 + (str[i] - '0'));
-		i++;
-	}
-	return (nb * sign);
+	if (fd != -1 && g_previous_line == -1)
+		ft_putchar('\n');
+	g_previous_line = fd;
+	return (fd);
 }
 
-int ft_read(int argc, char **argv, int nb_octets)
+void		ft_display(int i, int nb_octets, char *output, char **argv)
 {
-	int fd;
-	int ret;
-	char buf[BUF_SIZE + 1];
-	int i;
-	int size;
-	char *output;
-	int j;
+	int		size;
+	int		j;
 
-	j = 3;
-	while (j < argc)
+	if (argv[2][0] == '+')
 	{
-		i = 0;
-		fd = open(argv[j], O_RDONLY);
-		if (fd == -1)
+		j = nb_octets - 1;
+		while (output[j])
 		{
-			ft_putstr("tail: ");
-			ft_putstr(argv[j]);
-			ft_putstr(": No such file or directory");
-			return (1);
+			ft_putchar(output[j]);
+			j++;
 		}
-		if (argc > 4)
-		{
-			ft_putstr("==> ");
-			ft_putstr(argv[j]);
-			ft_putstr(" <==\n");
-		}
-		output = malloc(sizeof(char) * 1);
-		while (ret = (read(fd, buf, BUF_SIZE)))
-		{
-			output[i] = buf[0];
-			i++;
-			buf[ret] = '\0';
-		}
+	}
+	else
+	{
 		size = i;
-		close(fd);
-		fd = open(argv[j], O_RDONLY);
 		i = size - nb_octets;
-		while ((i >= size - nb_octets  && i < size))
+		while ((i >= size - nb_octets && i < size))
 		{
 			if (i >= 0)
 				ft_putchar(output[i]);
 			i++;
-			//	ft_putstr(buf);
 		}
-		if (j < argc - 1)
-			ft_putchar('\n');
-		if (close(fd) == -1)
+	}
+}
+
+int			ft_read(int j, int nb_files, char **argv, int nb_octets)
+{
+	int		fd;
+	char	*output;
+	char	buf[BUF_SIZE + 1];
+	int		ret;
+	int		i;
+
+	i = 0;
+	fd = ft_open(argv[j], j);
+	if (j != g_init && fd != -1)
+		ft_putchar('\n');
+	if (fd == -1)
+		return (-1);
+	ft_several_files(nb_files, argv[j], j);
+	output = malloc(sizeof(char) * 1);
+	while ((ret = (read(fd, buf, BUF_SIZE))))
+	{
+		output[i] = buf[0];
+		i++;
+		buf[ret] = '\0';
+	}
+	ft_display(i, nb_octets, output, argv);
+	free(output);
+	return (fd);
+}
+
+int			ft_tail(int nb_files, char **argv, int nb_octets, int j)
+{
+	int		fd;
+
+	g_init = j;
+	if (nb_octets < 0)
+		nb_octets = -nb_octets;
+	g_nb_files = nb_files - j;
+	while (j < nb_files)
+	{
+		fd = ft_read(j, nb_files, argv, nb_octets);
+		if (fd != -1 && close(fd) == -1)
 		{
 			ft_putstr("close() error");
 			return (1);
 		}
-		free(output);
 		j++;
 	}
-	return (0);
-}
-
-int	main(int ac, char ** av)
-{
-	///	if (ac >2)
-	//	{
-	//		ft_putstr("Too many arguments.");
-	//		return (0);
-	//	}
-	if (ac == 1)
-	{
-		ft_putstr("File name missing.");
-		return (0);
-	}
-
-	ft_read(ac, av, ft_atoi(av[2]));
+	if (g_previous_line == -1)
+		ft_putchar('\n');
 	return (0);
 }

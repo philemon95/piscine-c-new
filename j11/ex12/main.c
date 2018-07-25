@@ -6,13 +6,16 @@
 /*   By: phperrot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/24 10:10:45 by phperrot          #+#    #+#             */
-/*   Updated: 2018/07/24 22:17:11 by phperrot         ###   ########.fr       */
+/*   Updated: 2018/07/25 16:03:51 by phperrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_list.h"
 #include <stdio.h>
 #include <string.h>
+
+void ft_list_remove_if(t_list **begin_list, void *data_ref, int (*cmp)());
+
 int		ft_strlen(char *str)
 {
 	int	i;
@@ -81,6 +84,6 @@ int		main(void)
 	ft_list_push_front(&list, (int*)71);
 	print_list(list);
 	printf("\n ----- \n");	
-	(ft_list_foreach_if(list, &addition, &a, &strcmp));
+	(ft_list_remove_if(&list, &a, &strcmp));
 	return (0);
 }

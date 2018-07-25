@@ -6,7 +6,7 @@
 /*   By: phperrot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/23 11:14:55 by phperrot          #+#    #+#             */
-/*   Updated: 2018/07/24 09:50:53 by phperrot         ###   ########.fr       */
+/*   Updated: 2018/07/25 10:50:14 by phperrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 #include <stdlib.h>
 #define BUF_SIZE 1
 #include <stdio.h>
-
+#include <string.h>
 void	ft_putchar(char c);
 
 void	ft_putstr(char *str)
@@ -66,13 +66,13 @@ void	ft_putnbr_base(int nbr, char *base);
 int ft_read(char *file)
 {
 	int fd;
-	int ret;
-	char buf[BUF_SIZE + 1];
-	int i;
-	int size;
-	char *output;
-	int j;
-
+	int		ret;
+	char	buf[BUF_SIZE + 1];
+	int		i;
+	int		size;
+	char	*output;
+	char	*prev_line;
+	char	*cur_line;
 		i = 0;
 		fd = open(file, O_RDONLY);
 		if (fd == -1)
@@ -80,8 +80,10 @@ int ft_read(char *file)
 			ft_putstr(": No such file or directory");
 			return (1);
 		}
+	//	if (!(output = malloc(sizeof(char) * 1)))
+	//		return (0);
 		output = malloc(sizeof(char) * 1);
-		while (ret = (read(fd, buf, BUF_SIZE)))
+		while ((ret = (read(fd, buf, BUF_SIZE))))
 		{
 			output[i] = buf[0];
 			i++;
@@ -91,12 +93,25 @@ int ft_read(char *file)
 		size = 0;
 		close(fd);
 		fd = open(file, O_RDONLY);
+		if (!(prev_line = malloc(sizeof(char) * 16 + 1)))
+			return (0);
+		if (!(cur_line = malloc(sizeof(char) * 16 + 1)))
+			return (0);
+
 		while ((size < i))
 		{
 //			if (size % 16 != 0)
 //				ft_putstr("   ");
+			if (strcmp(cur_line, prev_line))
+			{
+				printf("\n @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ \n");
+			}
+			cur_line[size % 16] = output[size];
 			if (size != 0 && size % 16 == 0)
-				ft_putchar('\n');	
+			{
+				ft_putchar('\n');
+				prev_line = cur_line;
+			}
 			if (size % 16 == 0)
 			{
 				ft_putnbr_base(size, "0123456789abcdef");

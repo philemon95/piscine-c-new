@@ -30,13 +30,15 @@ int	main(int argc, char **argv)
 	char **str;
 	int (*f)(char *, char *);
 	int i;
+	(void)argc;
+	i = 0;
 	f = &ft_strcmp;
 	str = ft_split_whitespaces(argv[1]);
 	while (++i < 10)
 		printf("%d-%s\n",i, str[i]);
 	(ft_advanced_sort_wordtab(str, f));
 	i = -1;
-	while (++i < 11)
+	while (++i < 10)
 		printf("%d+%s\n",i,  str[i]);
 	return (1);
 }

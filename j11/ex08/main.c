@@ -6,13 +6,14 @@
 /*   By: phperrot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/24 10:10:45 by phperrot          #+#    #+#             */
-/*   Updated: 2018/07/24 15:29:10 by phperrot         ###   ########.fr       */
+/*   Updated: 2018/07/25 15:59:54 by phperrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_list.h"
 #include <stdio.h>
 
+t_list *ft_create_elem(void *data);
 void ft_list_reverse(t_list **begin_list);
 void ft_list_push_front(t_list **begin_list, void *data);
 void 	print_list(t_list *list)
@@ -33,7 +34,6 @@ int		main(void)
 	
 	list = ft_create_elem((int*)(5));
 	ft_list_push_front(&list, (int*)8);
-	ft_list_push_front(&list, (int*)7);
 	ft_list_push_front(&list, (int*)9);
 	ft_list_push_front(&list, (int*)4);
 	ft_list_push_front(&list, (int*)3);

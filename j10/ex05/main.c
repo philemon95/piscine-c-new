@@ -6,7 +6,7 @@
 /*   By: phperrot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/21 09:43:52 by phperrot          #+#    #+#             */
-/*   Updated: 2018/07/23 14:08:31 by phperrot         ###   ########.fr       */
+/*   Updated: 2018/07/25 18:42:38 by phperrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,11 @@ int addition(int a, int b)
 
 int	main(void)
 {
-	int tab[] = { 1, 3};
+	int tab[] = {0, 0, 0, 0, -1};
 	int (*f)(int, int);
 
 	f = addition; 
-	printf("%d", ft_is_sort(tab, 2,f));
+	printf("%d", ft_is_sort(tab, 5,f));
 
 }
 
