@@ -1,28 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   pgcd.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: phperrot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/04 18:06:03 by phperrot          #+#    #+#             */
-/*   Updated: 2018/07/26 20:27:14 by phperrot         ###   ########.fr       */
+/*   Created: 2018/07/26 09:42:48 by phperrot          #+#    #+#             */
+/*   Updated: 2018/07/26 10:08:23 by phperrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
-#include <stdlib.h>
+#include <xlocale.h>
 #include <string.h>
+#include <stdlib.h>
 
-int     leng(char *str);
-
-int ft_atoi(char *str);
-
-int		main(void)
+int		pgcd(char **argv)
 {
-	char str[]="        +-08$";
+	int a;
+	int b;
+	int r;
 
-	printf("\n \n  %d \n \n", ft_atoi(str));
-	printf("\n \n  %d \n \n", atoi(str));
+	a = (atoi(argv[1]) > atoi(argv[2]) ? atoi(argv[1]) : atoi(argv[2]));
+	b = (a == atoi(argv[1]) ? atoi(argv[2]) : atoi(argv[1]));
+	r = a % b;
+	while (r != 0)
+	{
+		a = b;
+		b = r;
+		r = a % b;
+	}
+	return (b);
+}
+
+int	main(int ac, char **av)
+{
+	if (ac != 3)
+	{
+		printf("\n");
+		return (0);
+	}
+	else
+	{
+	printf("%d\n", pgcd(av));
+	}
 	return (0);
 }

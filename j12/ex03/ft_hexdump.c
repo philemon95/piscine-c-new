@@ -6,7 +6,7 @@
 /*   By: phperrot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/23 11:14:55 by phperrot          #+#    #+#             */
-/*   Updated: 2018/07/25 10:50:14 by phperrot         ###   ########.fr       */
+/*   Updated: 2018/07/25 23:34:44 by phperrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,7 @@ int ft_read(char *file)
 	int		ret;
 	char	buf[BUF_SIZE + 1];
 	int		i;
+	int		j;
 	int		size;
 	char	*output;
 	char	*prev_line;
@@ -77,7 +78,7 @@ int ft_read(char *file)
 		fd = open(file, O_RDONLY);
 		if (fd == -1)
 		{
-			ft_putstr(": No such file or directory");
+			ft_putstr(": No such file or directory\n");
 			return (1);
 		}
 	//	if (!(output = malloc(sizeof(char) * 1)))
@@ -93,19 +94,19 @@ int ft_read(char *file)
 		size = 0;
 		close(fd);
 		fd = open(file, O_RDONLY);
-		if (!(prev_line = malloc(sizeof(char) * 16 + 1)))
-			return (0);
-		if (!(cur_line = malloc(sizeof(char) * 16 + 1)))
-			return (0);
+		prev_line = malloc(sizeof(char) * 16 + 1);
+//		if (!(prev_line = malloc(sizeof(char) * 16 + 1)))
+//			return (0);
+		cur_line = malloc(sizeof(char) * 16 + 1);
+//		if (!(cur_line = malloc(sizeof(char) * 16 + 1)))
+//			return (0);
 
 		while ((size < i))
 		{
 //			if (size % 16 != 0)
 //				ft_putstr("   ");
-			if (strcmp(cur_line, prev_line))
-			{
-				printf("\n @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ \n");
-			}
+			if (strcmp(cur_line, prev_line) && size % 16 == 0)
+				printf("\n @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ \n");
 			cur_line[size % 16] = output[size];
 			if (size != 0 && size % 16 == 0)
 			{
@@ -147,13 +148,20 @@ int ft_read(char *file)
 				ft_putchar(output[size]);
 			}
 			size++;
+			j = 0;
+			while (j < 16)
+			{
+				prev_line[j] = cur_line[j];
+				j ++;
+			}
+
 		}
 		i = size + 1;
 	   	while (i % 16 != 0)
 		{
 			ft_putstr("    ");
 			i++;
-		}	
+		}
 		ft_putstr("    \n");
 		ft_putnbr_base(size, "0123456789abcdef");
 		ft_putchar('\n');
@@ -162,7 +170,7 @@ int ft_read(char *file)
 			ft_putstr("close() error");
 			return (1);
 		}
-		free(output);
+//		free(output);
 	return (0);
 }
 

@@ -1,42 +1,56 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   tab_mult.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: phperrot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/08 15:37:03 by phperrot          #+#    #+#             */
-/*   Updated: 2018/07/26 20:27:57 by phperrot         ###   ########.fr       */
+/*   Created: 2018/07/26 17:21:53 by phperrot          #+#    #+#             */
+/*   Updated: 2018/07/26 17:44:45 by phperrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int symbols(char *str);
+#include <unistd.h>
 
-int	ft_atoi(char *str)
+void	ft_putchar(char c)
 {
-	int nb;
-	int sign;
-	int i;
+	write(1, &c, 1);
+}
 
-	nb = 0;
+int		ft_atoi(char *str)
+{
+	int i;
+	int res;
+	int sign;
+
 	i = 0;
+	res = 0;
 	sign = 1;
-	while (str[i] == '\n' | str[i] == '\r' | str[i] == '\t'
-			| str[i] == '\f' | str[i] == '\v' | str[i] == ' ')
+
+	while (str[i] == ' ' || str[i] == '\n' || str[i] == '\t')
+		i++;
+	if (str[i] == '-' && str[i + 1] != '+')	
 	{
+		sign = -1;
 		i++;
 	}
-	if (str[i] == '+' && str[i + 1] != '-')
+	if (str[i] == '+')
 		i++;
-	if (str[i] == '-')
+
+	while (str[i] >= '0' && str[i] <= '9')
 	{
-		sign = -sign;
+		res *= 10;
 		i++;
 	}
-	while ((str[i] - '0') >= 0 && ('9' - str[i]) >= 0)
+
+}
+
+int		main(int ac, char **ac)
+{
+	if (ac == 2)
 	{
-		nb = (nb * 10 + (str[i] - '0'));
-		i++;
+		ft_multab(ac[1]);
 	}
-	return (nb * sign);
+	ft_putchar('\n');
+	return (0);
 }
